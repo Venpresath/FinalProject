@@ -5,10 +5,12 @@
         <h1>Hi the API is working!</h1>
         </div>`,
 
-        controller: function() {
+        controller: function(service) {
             let vm = this;   
-            vm.getAPI= service.getAPI();       
-
+            vm.callAPI = service.callAPI();
+            vm.callAPI.then(function(response){
+                vm.song = response.data;
+            });
 		}
 	};
 
