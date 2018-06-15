@@ -5,7 +5,7 @@
         <h1>Hi the API is working!</h1>
         </div>`,
 
-        controller: function() {
+        controller: function(service) {
             let vm = this;   
             vm.getAPI= service.getAPI();       
 
