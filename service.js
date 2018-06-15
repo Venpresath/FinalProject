@@ -6,8 +6,8 @@
 
 
         let getAPI = function(){
-            return $http.get(url).then(function (response) {
-           let url = `https://api.musixmatch.com/ws/1.1/artist.search?format=jsonp&callback=callback&q_artist=kanye&apikey=${APIKey}`;
+            let url = `https://api.musixmatch.com/ws/1.1/artist.search?format=jsonp&callback=callback&q_artist=kanye&apikey=${APIKey}`;
+            return $http.get(url).then(function(response) {  
             console.log(response);
         
         })
