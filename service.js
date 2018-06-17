@@ -14,7 +14,7 @@
     }
         
 return {
-    getAPI
+    callAPI
 }
 
     }
@@ -22,4 +22,3 @@ return {
         .module("app")
         .factory("service", service);
 }
-
