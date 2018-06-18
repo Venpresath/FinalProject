@@ -22,10 +22,6 @@
             vm.callAPI.then(function(response){
                 vm.song = response;
             });
-            // vm.callLyrics().then(function(response){
-            //     console.log("hi");
-            //     vm.lyrics = response;
-            // });
 		}
 	};
 
