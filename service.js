@@ -2,13 +2,13 @@
 {
     let service = function ($http) {
         let vm = this;
-        const APIKey = "e89505a720549b7b6b4a37d28142e420";
+        const APIKey = "c42ef466fff57d1c817a1efd2f2ebf38";
 
 
         let getAPI = function(){
-            let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/artist.search?format=jsonp&callback=callback&q_artist=kanye&apikey=${APIKey}`;
+            let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/artist.search?format=json&q_artist=kanye&apikey=${APIKey}`;
             return $http.get(url).then(function(response) {  
-            console.log(response.data.body);
+            console.log(response.data.message.body.artist_list[0].artist.artist_name);
         
         })
     }
@@ -22,4 +22,3 @@ return {
         .module("app")
         .factory("service", service);
 }
-
