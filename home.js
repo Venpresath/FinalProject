@@ -4,7 +4,7 @@
         template: `<div>
         <h1>Hi the API is working!</h1>
         <p>Here's an artist: {{$ctrl.song}}</p>
-        <input type="text" placeholder="Enter an artist" ng-model="$ctrl.artist"/><button>Submit</button>
+        <input type="text" placeholder="Enter an artist" ng-model="$ctrl.artist"/><button ng-click="$ctrl.callLyrics()">Submit</button>
         <p>Lyric: {{$ctrl.lyrics}}</p>
         </div>`,
 
@@ -12,12 +12,15 @@
             let vm = this;   
             vm.artist = "";
             vm.callAPI = service.getAPI();
-            vm.callLyrics = service.getLyrics(vm.artist);
+            vm.callLyrics =function(re){
+                service.getLyrics(vm.artist)
+                .then(function(response){
+                    console.log("hi");
+                    vm.lyrics = response;
+                    });
+            } 
             vm.callAPI.then(function(response){
                 vm.song = response;
-            });
-            vm.callLyrics.then(function(response){
-                vm.lyrics = response;
             });
 		}
 	};
