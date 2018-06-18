@@ -8,7 +8,7 @@
 
         controller: function(service) {
             let vm = this;   
-            vm.callAPI = service.callAPI();
+            vm.callAPI = service.getAPI();
             vm.callAPI.then(function(response){
                 vm.song = response;
             });
