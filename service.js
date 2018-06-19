@@ -16,12 +16,12 @@
 
 
         let getLyrics = function (trackId) {
-                let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.snippet.get?format=jsonp&callback=callback&track_id=${trackId}&apikey=c42ef466fff57d1c817a1efd2f2ebf38`
+                let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.snippet.get?format=json&track_id=${trackId}&apikey=c42ef466fff57d1c817a1efd2f2ebf38`
                 return $http.get(url).then(function (response) {
                     console.log(url);
                     
                     let lyrics = response.data;
-                    return lyrics;
+                    return lyrics[0];
                 });
             }
         
