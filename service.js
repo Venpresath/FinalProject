@@ -36,21 +36,20 @@
                 let trackNum = response.data.message.body.track_list[0].track.track_id;
                 return trackNum;
             });
-            // beginning the language filter function
+            // beginning the language filter function, unecessary?
             // ${language}
 
-            let filterLanguage = function (language) {
-                let url = `https://api.musixmatch.com/ws/1.1/artist.search?format=jsonp&callback=callback&q_artist=katy%20perry&apikey=c42ef466fff57d1c817a1efd2f2ebf38
-            `
-                return $http.get(url).then(function (response) {
-                    console.log(response.callback.message.header.body.artist_list.artist.artist_name_translation_list.artist_alias.list.primary_genres.sedondary_genres.artist_credits);
-                    console.log("hi");
-                });
+            // let filterLanguage = function (language) {
+            //     let url = `https://api.musixmatch.com/ws/1.1/artist.search?format=jsonp&callback=callback&q_artist=katy%20perry&apikey=c42ef466fff57d1c817a1efd2f2ebf38
+            // `
+            //     return $http.get(url).then(function (response) {
+            //         console.log(response.callback.message.header.body.artist_list.artist.artist_name_translation_list.artist_alias.list.primary_genres.sedondary_genres.artist_credits.);
+            //         console.log("hi");
+            //     });
 
             }
-        }
-
-
+        
+    
         return {
             getLyrics,
             getTrackId,
