@@ -22,6 +22,7 @@
                     
                     let lyrics = response.data;
                     return lyrics[0];
+                    console.log("Hi Dj");
                 });
             }
         
