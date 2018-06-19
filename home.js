@@ -1,27 +1,42 @@
 "use strict";
 {
+    
+    
+    
     let home = {
         template: `<div>
         <h1>Hi the API is working!</h1>
-        <p>Here's an artist: {{$ctrl.song}}</p>
-        <input type="text" placeholder="Enter an artist" ng-model="$ctrl.artist"/><button ng-click="$ctrl.callLyrics()">Submit</button>
+        <input type="text" placeholder="Enter an artist" ng-model="$ctrl.artist"/><button ng-click="$ctrl.getTrackId()">Submit</button>
         <p>Lyric: {{$ctrl.lyrics}}</p>
+        <p> Song: {{$ctrl.name}}</p>
         </div>`,
 
         controller: function(service) {
             let vm = this;   
             vm.artist = "";
-            vm.callAPI = service.getAPI();
-            vm.callLyrics =function(re){
+            // vm.callAPI = service.getAPI();
+            vm.callLyrics = function(artist){
                 service.getLyrics(vm.artist)
                 .then(function(response){
-                    console.log("hi");
+                    
                     vm.lyrics = response;
-                    });
+                    return vm.lyrics;
+                });
             } 
-            vm.callAPI.then(function(response){
-                vm.song = response;
-            });
+            vm.getTrackId = function(artist){
+                service.getTrackId(vm.artist)
+                .then(function(response){
+                    vm.name= response; 
+                    return vm.name;
+                });
+            }
+            // vm.callAPI.then(function(response){
+            //     vm.song = response;
+            // });
+            // vm.callLyrics().then(function(response){
+            //     console.log("hi");
+            //     vm.lyrics = response;
+            // });
 		}
 	};
 
