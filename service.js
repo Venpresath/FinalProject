@@ -3,6 +3,7 @@
     let service = function ($http) {
         let vm = this;
         const APIKey = "c42ef466fff57d1c817a1efd2f2ebf38";
+        console.log("hi kelly")
 
 
         let getAPI = function () {
