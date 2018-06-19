@@ -6,7 +6,7 @@
     let home = {
         template: `<div>
         <h1>Hi the API is working!</h1>
-        <input type="text" placeholder="Enter an artist" ng-model="$ctrl.artist"/><button ng-click="$ctrl.getTrackId(); $ctrl.callLyrics()">Submit</button>
+        <input type="text" placeholder="Enter an artist" ng-model="$ctrl.artist"/><button ng-click="$ctrl.getTrackId()">Submit</button>
         <p>Lyric: {{$ctrl.lyrics}}</p>
         <p> Song: {{$ctrl.songNum}}</p>
         </div>`,
@@ -15,11 +15,9 @@
             let vm = this;   
             vm.artist = "";
             
-            // vm.callAPI = service.getAPI();
-            vm.callLyrics = function(){
-                service.getLyrics(service.beId())
+            vm.getLyrics = function(){
+                service.getLyrics(songNum)
                 .then(function(response){
-                    
                     vm.lyrics = response;
                     return vm.lyrics;
                 });
@@ -28,9 +26,9 @@
             vm.getTrackId = function(artist){
                 service.getTrackId(vm.artist)
                 .then(function(response){
-                    vm.songNum= response; 
-                    service.beId();
-                    service.setId(vm.songNum);
+                    vm.songNum = response;
+                    // service.beId();
+                    // service.setId(vm.songNum);
                 });
             }
             // vm.callAPI.then(function(response){
