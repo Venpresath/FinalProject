@@ -23,6 +23,7 @@
                     return vm.lyrics;
                 });
             } 
+<<<<<<< HEAD
             vm.getTrackId = function(artist){
                 service.getTrackId(vm.artist)
                 .then(function(response){
@@ -37,6 +38,11 @@
             //     console.log("hi");
             //     vm.lyrics = response;
             // });
+=======
+//             vm.callAPI.then(function(response){
+//                 vm.song = response;
+//             });
+// >>>>>>> ecff9b3566a0151e996847424a59d4b96a807cac
 		}
 	};
 
