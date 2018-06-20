@@ -14,6 +14,7 @@
             lyrics = newlyrics;
         }
 
+        //
 
         let getLyrics = function (trackId) {
                 let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.snippet.get?format=json&track_id=${trackId}&apikey=c42ef466fff57d1c817a1efd2f2ebf38`
@@ -39,7 +40,9 @@
             let getSongName = function(trackId){
                 let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.get?format=json&track_id=${trackId}&apikey=c42ef466fff57d1c817a1efd2f2ebf38`;
                 return $http.get(url).then(function(response){
-                    console.log(response);
+                    console.log(url);
+                    let songName = response.data.message.body.track.track_name;
+                    return songName;
                 });
             }
 
