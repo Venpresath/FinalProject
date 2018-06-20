@@ -5,6 +5,15 @@
         let trackId= 0;
         let lyrics = "";
         const APIKey = "c42ef466fff57d1c817a1efd2f2ebf38";
+
+        let beArtist= function(){
+            return beArtist;
+        }
+       
+        let setArtist = function(newArtist){
+            beArtist = newArtist;
+        }
+
 // beLyrics returns the data from the service
         
        let beLyrics= function(){
@@ -62,7 +71,9 @@
                     getTrackId,
                     beLyrics,
                     setLyrics,
-                    getSongName
+                    getSongName,
+                    beArtist,
+                    setArtist
                 };
             
         }

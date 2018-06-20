@@ -3,12 +3,7 @@
     let home = {
         template: `<div>
         <h1>Hi the API is working!</h1>
-        <input type="text" placeholder="Enter an artist" ng-model="$ctrl.artist"/><button ng-click="$ctrl.getTrackId($ctrl.songNum)">Submit</button>
-        <p>Lyric: {{$ctrl.lyrics}}</p>
-        <p> ID: {{$ctrl.songNum}}</p>
-        <p> Song Name: {{$ctrl.songName}}</p>
-        <input type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button ng-click="$ctrl.getSongName($ctrl.songNum); $ctrl.getTrackId($ctrl.songNum)">GEET'EM</button>
-        <p> Result: {{$ctrl.result}} {{$ctrl.condition}}</p>
+        <input type="text" placeholder="Enter an artist" ng-model="$ctrl.artist"/> <a href= "#!/game"><button ng-click="$ctrl.getTrackId($ctrl.songNum)">Submit</button></a>
         </div>`,
 // empty strings are created here that are filled in when a specific artist, lyric, guess is called. 
         controller: function (service) {
