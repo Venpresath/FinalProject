@@ -6,6 +6,7 @@
         let lyrics = "";
         const APIKey = "c42ef466fff57d1c817a1efd2f2ebf38";
 
+        
        let beLyrics= function(){
             return lyrics;
         }
@@ -13,8 +14,6 @@
         let setLyrics = function(newlyrics){
             lyrics = newlyrics;
         }
-
-        //
 
         let getLyrics = function (trackId) {
                 let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.snippet.get?format=json&track_id=${trackId}&apikey=c42ef466fff57d1c817a1efd2f2ebf38`
