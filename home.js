@@ -1,8 +1,5 @@
 "use strict";
-{
-    
-    
-    
+{    
     let home = {
         template: `<div>
         <h1>Hi the API is working!</h1>
