@@ -6,7 +6,8 @@
         <input type="text" placeholder="Enter an artist" ng-model="$ctrl.artist"/><button ng-click="$ctrl.getTrackId($ctrl.songNum)">Submit</button>
         <p>Lyric: {{$ctrl.lyrics}}</p>
         <p> ID: {{$ctrl.songNum}}</p>
-        <input type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button ng-click="$ctrl.getSongName()">GEET'EM</button>
+        <p> Song Name: {{$ctrl.songName}}</p>
+        <input type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button ng-click="$ctrl.getSongName($ctrl.songNum)">GEET'EM</button>
         </div>`,
 
         controller: function(service) {
