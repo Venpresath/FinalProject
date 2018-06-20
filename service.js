@@ -4,7 +4,7 @@
         let vm = this;
         let trackId= 0;
         let lyrics = "";
-        const APIKey = "c42ef466fff57d1c817a1efd2f2ebf38";
+        const APIKey = "e89505a720549b7b6b4a37d28142e420";
 
        let beLyrics= function(){
             return lyrics;
@@ -26,13 +26,13 @@
                 });
             }
         
-            let getTrackId = function (artist) {
+            let getTrackId = function (artist){
                 var artist = artist.split(" ").join("%20");
                 let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.search?format=json&q_artist=${artist}&s_track_rating=desc&apikey=c42ef466fff57d1c817a1efd2f2ebf38`
                 return $http.get(url).then(function(response){
-                    //create random number generator between 1 and 10 to find the index of the song. 
+                    let i = Math.floor((Math.random() * 10) + 1);
                     //varying difficulties can change the number generated. 
-                    console.log(response.data.message.body.track_list[0].track.artist_name);
+                   console.log(response.data.message.body.track_list[i].track.artist_name);
                     let trackNum = response.data.message.body.track_list[0].track.track_id;
                     getLyrics(trackNum);
                     return trackNum;
@@ -42,7 +42,7 @@
             let getSongName = function(trackId){
                 let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.get?format=json&track_id=${trackId}&apikey=c42ef466fff57d1c817a1efd2f2ebf38`;
                 return $http.get(url).then(function(response){
-                    console.log(url);
+                    //console.log(url);
                     let songName = response.data.message.body.track.track_name;
                     return songName;
                 });
@@ -60,4 +60,4 @@
         angular
             .module("app")
             .factory("service", service);
-    }
+}

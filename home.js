@@ -21,9 +21,9 @@
 
             vm.guessSong = function (guess) {
                 if (guess === vm.songName) {
-                    console.log("correct");
+                    // console.log("correct");
                 } else {
-                    console.log("guess again");
+                    // console.log("guess again");
                 }
             }
 
