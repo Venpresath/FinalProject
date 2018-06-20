@@ -1,8 +1,8 @@
 "use strict";
 {
     let game = {
-        template: `<div>
-        <p>Lyric: {{$ctrl.lyrics}}</p>
+        template: `<div ng-init="$ctrl.getTrackId()">
+        <p>Lyric: {{$ctrl.lyrics}} </p>
         <p> ID: {{$ctrl.songNum}}</p>
         <p> Song Name: {{$ctrl.songName}}</p>
         <input type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button ng-click="$ctrl.getSongName($ctrl.songNum); $ctrl.getTrackId($ctrl.songNum)">GEET'EM</button>
@@ -10,6 +10,7 @@
         </div>`,
 // empty strings are created here that are filled in when a specific artist, lyric, guess is called. 
         controller: function (service) {
+
             let vm = this;
             vm.artist = "";
             vm.lyrics = "";
@@ -52,6 +53,12 @@
                     return vm.lyrics;
                 });
             }
+            vm.test = function () {
+                console.log("hi");
+            }
+            vm.getArtist = function () {
+                vm.artist = service.beArtist();
+            }
 // getSongName using the trackId to getSongName
             vm.getSongName = function () {
                 service.getSongName(vm.songNum).then(function (response) {
@@ -64,8 +71,9 @@
             }
 // getTrackId is giving the song a trackId based on the artist name
             vm.getTrackId = function () {
-                service.getTrackId(vm.artist)
+                service.getTrackId(service.beArtist())
                     .then(function (response) {
+                        console.log("It's working");
                         vm.songNum = response;
                         vm.getLyrics();
                         return vm.songNum;

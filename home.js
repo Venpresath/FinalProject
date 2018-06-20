@@ -3,7 +3,7 @@
     let home = {
         template: `<div>
         <h1>Hi the API is working!</h1>
-        <input type="text" placeholder="Enter an artist" ng-model="$ctrl.artist"/> <a href= "#!/game"><button ng-click="$ctrl.getTrackId($ctrl.songNum)">Submit</button></a>
+        <input type="text" placeholder="Enter an artist" ng-model="$ctrl.artist"/> <a href= "#!/game"><button ng-click="$ctrl.updateArtist($ctrl.artist)">Submit</button></a>
         </div>`,
 // empty strings are created here that are filled in when a specific artist, lyric, guess is called. 
         controller: function (service) {
@@ -42,6 +42,12 @@
                     return vm.result;
                 } 
             }
+
+            vm.updateArtist = function(artist) {
+                service.setArtist(artist);
+                console.log(service.beArtist());
+            }
+
 // getLyrics using the trackId to get lyrics
             vm.getLyrics = function () {
                 service.getLyrics(vm.songNum).then(function () {
