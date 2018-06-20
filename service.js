@@ -18,11 +18,9 @@
         let getLyrics = function (trackId) {
                 let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.snippet.get?format=json&track_id=${trackId}&apikey=c42ef466fff57d1c817a1efd2f2ebf38`
                 return $http.get(url).then(function (response) {
-                    console.log(url);
-                    
-                    let lyrics = response.data;
-                    return lyrics[0];
-                    console.log("Hi Dj");
+                    console.log(response.data.message.body.snippet);
+                    let snippet = response.data.message.body.snippet;
+                    return snippet;
                 });
             }
         
@@ -32,7 +30,9 @@
                 return $http.get(url).then(function(response){
                     console.log(response.data.message.body.track_list[0].track.artist_name);
                     let trackNum = response.data.message.body.track_list[0].track.track_id;
+                    getLyrics(trackNum);
                     return trackNum;
+                    
                 });
             }
 
