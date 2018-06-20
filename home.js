@@ -36,6 +36,7 @@
             vm.getTrackId = function(){
                 service.getTrackId(vm.artist)
                 .then(function(response){
+                    vm.songNum = response;
                     vm.getLyrics();
                     return vm.songNum;
                 });
