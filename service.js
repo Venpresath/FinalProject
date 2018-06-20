@@ -16,10 +16,10 @@
 
 
         let getLyrics = function (trackId) {
-                let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.snippet.get?format=json&track_id=${trackId}&apikey=f4e510d4d5b6f478a5d43f2bbc92a036`
+                let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.snippet.get?format=json&track_id=${trackId}&apikey=c42ef466fff57d1c817a1efd2f2ebf38`
                 return $http.get(url).then(function (response) {
+                    
                     let lyrics = response.data.message.body.snippet.snippet_body;
-                    console.log(lyrics);
                     setLyrics(lyrics);
                     return lyrics;
                 });
@@ -36,12 +36,19 @@
                 });
             }
 
+            let getSongName = function(trackId){
+                let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.get?format=json&track_id=${trackId}&apikey=c42ef466fff57d1c817a1efd2f2ebf38`;
+                return $http.get(url).then(function(response){
+                    console.log(response);
+                });
+            }
 
                 return {
                     getLyrics,
                     getTrackId,
                     beLyrics,
-                    setLyrics
+                    setLyrics,
+                    getSongName
                 };
             
         }
