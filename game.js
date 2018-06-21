@@ -80,6 +80,12 @@
                     });
             }
 
+            // vm.disableButton = function() {
+            //     if (){
+
+            //     }
+            // }
+
         }
     };
 
