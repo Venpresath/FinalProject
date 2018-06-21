@@ -1,7 +1,7 @@
 "use strict";
 {
     let game = {
-        template: `<div ng-init="$ctrl.getTrackId()">
+        template: `<div ng-init="$ctrl.getTrackId()"> 
         <p>Lyric: {{$ctrl.lyrics}} </p>
         <p> ID: {{$ctrl.songNum}}</p>
         <p> Song Name: {{$ctrl.songName}}</p>
