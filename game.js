@@ -1,11 +1,20 @@
 "use strict";
 {
     let game = {
-        template: `<div ng-init="$ctrl.getTrackId()">
-        <p>Lyric: {{$ctrl.lyrics}} </p>
-        <input class = "input" type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button class="mybtn" ng-click="$ctrl.getSongName($ctrl.songNum); $ctrl.getTrackId($ctrl.songNum)">GEET'EM</button>
-        <p> Result: {{$ctrl.result}} {{$ctrl.condition}}</p>
-        </div>`,
+        template: `
+        <div ng-init="$ctrl.getTrackId()">
+            <div class="tracker">
+                <span ng-repeat="conds in $ctrl.count"class = "winContainer"><i class={{conds.class}}></i></span>
+            </div>
+
+            <div class="content">
+                <p>Lyric: {{$ctrl.lyrics}} </p>
+                <input class = "input" type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button class="mybtn" ng-click="$ctrl.getSongName($ctrl.songNum); $ctrl.getTrackId($ctrl.songNum)">GEET'EM</button>
+                <p> Result: {{$ctrl.result}} {{$ctrl.condition}}</p>
+            </div>
+
+        </div>
+        `,
         // empty strings are created here that are filled in when a specific artist, lyric, guess is called. 
         controller: function (service) {
 
@@ -17,6 +26,7 @@
             vm.wins = 0;
             vm.losses = 0;
             vm.condition = "";
+            vm.count = [];
             // guessSong function will determine if the users answer is correct or not and give an appropriate response
             vm.guessSong = function (guess) {
                 if (guess.toLowerCase() == vm.songName.toLowerCase()) {
@@ -28,10 +38,13 @@
                         vm.wins = 0;
                         vm.losses = 0;
                     }
-
+                    vm.count.push({class: "fas fa-trophy"});
+                    console.log(vm.count);
                     return vm.result;
                 } else {
                     console.log("guess again");
+                    vm.count.push({class: "fas fa-times"});
+                    console.log(vm.count);
                     vm.result = "Do you even listen to " + service.beArtist() + "? The answer was: " + vm.songName + ".";
                     vm.losses++;
                     if (vm.losses === 3) {
@@ -44,6 +57,7 @@
                     return vm.result;
                 }
             }
+            
             // getLyrics using the trackId to get lyrics
             vm.getLyrics = function () {
                 service.getLyrics(vm.songNum).then(function () {
