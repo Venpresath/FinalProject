@@ -3,7 +3,6 @@
     let game = {
         template: `<div ng-init="$ctrl.getTrackId()"> 
         <p>Lyric: {{$ctrl.lyrics}} </p>
-        <p> ID: {{$ctrl.songNum}}</p>
         <p> Song Name: {{$ctrl.songName}}</p>
         <input type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button ng-click="$ctrl.getSongName($ctrl.songNum); $ctrl.getTrackId($ctrl.songNum)">GEET'EM</button>
         <p> Result: {{$ctrl.result}} {{$ctrl.condition}}</p>
@@ -25,7 +24,7 @@
                     console.log("correct");
                     vm.result = "correct";
                     vm.wins++;
-                    if (vm.wins === 3){
+                    if (vm.wins === 5){
                         vm.condition = "you win!";
                         vm.wins = 0;
                         vm.losses = 0;                       
@@ -34,7 +33,7 @@
                     return vm.result;
                 } else {
                     console.log("guess again");
-                    vm.result = "guess again";
+                    vm.result = "Do you even listen to "+ service.beArtist()+"? The answer was: "+vm.songName+".";
                     vm.losses++;
                         if (vm.losses === 3){
                             vm.condition = "you lose!";
@@ -53,9 +52,7 @@
                     return vm.lyrics;
                 });
             }
-            vm.test = function () {
-                console.log("hi");
-            }
+ 
             vm.getArtist = function () {
                 vm.artist = service.beArtist();
             }
@@ -79,13 +76,6 @@
                         return vm.songNum;
                     });
             }
-
-            // vm.disableButton = function() {
-            //     if (){
-
-            //     }
-            // }
-
         }
     };
 
