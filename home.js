@@ -37,7 +37,6 @@
                             // if user lose count reaches 3 reset wins and losses 0. Reset start again. 
                             vm.wins = 0;
                             vm.losses = 0;
-                            
                         }
                     return vm.result;
                 } 
