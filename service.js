@@ -2,41 +2,15 @@
 {
     let service = function ($http) {
         let vm = this;
-<<<<<<< HEAD
-=======
         let trackId = 0;
         let lyrics = "";
         var array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
->>>>>>> d8e003b2653ce687391557bc5ba27f97bc3daa98
         const APIKey = "c42ef466fff57d1c817a1efd2f2ebf38";
 
         let beArtist = function () {
             return beArtist;
         }
 
-<<<<<<< HEAD
-        let getLyrics = function (artist) {
-                var artist = artist.split(" ").join("%20");
-                let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/matcher.lyrics.get?format=json&q_artist=${artist}&apikey=${APIKey}`;
-                return $http.get(url).then(function (response) {
-                    console.log(url);
-                    
-                    let lyrics = response.data.message.body.lyrics.lyrics_body;
-                    lyrics = lyrics.split("******* This Lyrics is NOT for Commercial use *******");
-                    return lyrics[0];
-                });
-            }
-
-                return {
-                    getLyrics
-                };
-            
-        }
-        angular
-            .module("app")
-            .factory("service", service);
-    }
-=======
         let setArtist = function (newArtist) {
             beArtist = newArtist;
         }
@@ -122,4 +96,3 @@ angular
     .module("app")
     .factory("service", service);
 }
->>>>>>> d8e003b2653ce687391557bc5ba27f97bc3daa98
