@@ -2,7 +2,7 @@
 {
     let home = {
         template: `<div>
-        <input type="text" placeholder="Enter an artist" ng-model="$ctrl.artist"/> <a href= "#!/game"><button ng-click="$ctrl.updateArtist($ctrl.artist)">Submit</button></a>
+        <input type="text" placeholder="Enter an artist" ng-model="$ctrl.artist" class="input"/> <a href= "#!/game"><button class="mybtn" ng-click="$ctrl.updateArtist($ctrl.artist)">Submit</button></a>
         </div>`,
         // empty strings are created here that are filled in when a specific artist, lyric, guess is called. 
         controller: function (service) {
