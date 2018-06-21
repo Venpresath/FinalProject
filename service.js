@@ -55,14 +55,7 @@
         return trackNum;
     });
 }
-var input = document.getElementById("myArtist");
-input.addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-        document.getElementById("mybtn").click();
 
-    }
-});
 
 
 // getSongName takes the trackId to get the name of the specific song. 

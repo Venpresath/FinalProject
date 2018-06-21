@@ -1,5 +1,8 @@
 "use strict";
 {
+    
+    
+    
     let home = {
         template: `<div>
         <input type="text" placeholder="Enter an artist" ng-model="$ctrl.artist" class="input"/> <a href= "#!/game"><button class="mybtn" ng-click="$ctrl.updateArtist($ctrl.artist)">Submit</button></a>
