@@ -2,17 +2,19 @@
 {
     let game = {
         template: `
+        <div class="background" ng-show="$ctrl.background">
         <div ng-init="$ctrl.getTrackId()">
             <div class="tracker">
                 <span ng-repeat="conds in $ctrl.count"class = "winContainer"><i class={{conds.class}}></i></span>
             </div>
-
             <div class="content">
                 <p>Lyric: {{$ctrl.lyrics}} </p>
                 <input class = "input" type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button class="mybtn" ng-click="$ctrl.getSongName($ctrl.songNum); $ctrl.getTrackId($ctrl.songNum)">GEET'EM</button>
                 <p> Result: {{$ctrl.result}} {{$ctrl.condition}}</p>
             </div>
+            <div class="modal" ng-show="$ctrl.show">{{$ctrl.modalText}}<img src="{{$ctrl.resultImg}}" width="200px"><a href="#!/home"><button>Play again?</button></a></div>
 
+        </div>
         </div>
         `,
         // empty strings are created here that are filled in when a specific artist, lyric, guess is called. 
@@ -27,18 +29,23 @@
             vm.losses = 0;
             vm.condition = "";
             vm.count = [];
+            vm.modalText = "";
+            vm.resultImg = "";
             // guessSong function will determine if the users answer is correct or not and give an appropriate response
             vm.guessSong = function (guess) {
                 if (guess.toLowerCase() == vm.songName.toLowerCase()) {
                     console.log("correct");
                     vm.result = "correct";
                     vm.wins++;
-                    if (vm.wins === 5) {
+                    if (vm.wins === 1) {
                         vm.condition = "you win!";
                         vm.wins = 0;
                         vm.losses = 0;
                         //disables button after 10 entries
-                        $("button").prop('disabled', true);
+                        $(".mybtn").prop('disabled', true);
+                        vm.modalText = "You win!";
+                        vm.resultImg = "https://i.gifer.com/Wvua.gif";
+                        vm.show =! vm.show;
                     }
                     vm.count.push({ class: "fas fa-trophy" });
                     console.log(vm.count);
@@ -49,12 +56,17 @@
                     console.log(vm.count);
                     vm.result = "Do you even listen to " + service.beArtist() + "? The answer was: " + vm.songName + ".";
                     vm.losses++;
-                    if (vm.losses === 3) {
+                    if (vm.losses === 1) {
                         vm.condition = "you lose!";
                         // if user lose count reaches 3 reset wins and losses 0. Reset start again. 
                         vm.wins = 0;
                         vm.losses = 0;
-                        $("button").prop('disabled', true);
+                        $(".mybtn").prop('disabled', true);
+                        vm.modalText = "You are such a loser";
+                        vm.resultImg = "https://media1.popsugar-assets.com/files/thumbor/B8lOru9rf0j1aOafrCxnqK6fKeA/fit-in/1200x630/filters:format_auto-!!-:strip_icc-!!-:fill-!white!-/2017/05/12/985/n/3019466/53c5add94ca9772d_pizza2/i/Pizza-you-when-youre-sad.gif";
+                        vm.show =! vm.show;
+                        vm.background =! vm.background;
+
                     }
                     return vm.result;
                 }
