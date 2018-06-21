@@ -1,10 +1,9 @@
 "use strict";
-{
-    
-    
-    
+{   
     let home = {
         template: `<div>
+        <h1>amazing title here</h1>
+        <p>discribe instructions to game here</p>
         <input type="text" placeholder="Enter an artist" ng-model="$ctrl.artist" class="input"/> <a href= "#!/game"><button class="mybtn" ng-click="$ctrl.updateArtist($ctrl.artist)">Submit</button></a>
         </div>`,
         // empty strings are created here that are filled in when a specific artist, lyric, guess is called. 

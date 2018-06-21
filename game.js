@@ -33,17 +33,19 @@
                     console.log("correct");
                     vm.result = "correct";
                     vm.wins++;
-                    if (vm.wins === 3) {
+                    if (vm.wins === 5) {
                         vm.condition = "you win!";
                         vm.wins = 0;
                         vm.losses = 0;
+                        //disables button after 10 entries
+                        $("button").prop('disabled', true);
                     }
-                    vm.count.push({class: "fas fa-trophy"});
+                    vm.count.push({ class: "fas fa-trophy" });
                     console.log(vm.count);
                     return vm.result;
                 } else {
                     console.log("guess again");
-                    vm.count.push({class: "fas fa-times"});
+                    vm.count.push({ class: "fas fa-times" });
                     console.log(vm.count);
                     vm.result = "Do you even listen to " + service.beArtist() + "? The answer was: " + vm.songName + ".";
                     vm.losses++;
@@ -52,12 +54,12 @@
                         // if user lose count reaches 3 reset wins and losses 0. Reset start again. 
                         vm.wins = 0;
                         vm.losses = 0;
-
+                        $("button").prop('disabled', true);
                     }
                     return vm.result;
                 }
             }
-            
+
             // getLyrics using the trackId to get lyrics
             vm.getLyrics = function () {
                 service.getLyrics(vm.songNum).then(function () {
@@ -95,12 +97,14 @@
                 $("input").val("");
             });
 
+
+
             $('input').keypress(function (e) {
                 if (e.which == 13) {
-                  $('button').click();
-                  return false;
+                    $('button').click();
+                    return false;
                 }
-              });
+            });
 
         }
     };
