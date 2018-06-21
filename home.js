@@ -19,6 +19,12 @@
         }
     };
 
+    $('input').keypress(function (e) {
+        if (e.which == 13) {
+          $('.mybtn').click();
+          return false;
+        }})
+
     home.$inject = ["service"];
 
     angular
