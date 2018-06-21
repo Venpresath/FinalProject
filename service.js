@@ -65,12 +65,6 @@
                 return songName;
             });
         }
-<<<<<<< HEAD
-        angular
-            .module("app")
-            .factory("service", service);
-}
-=======
 
         return {
             getLyrics,
@@ -87,4 +81,3 @@
         .module("app")
         .factory("service", service);
 }
->>>>>>> e0611b47a3c309c640dbf911750d2c9664ea973c
