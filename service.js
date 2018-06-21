@@ -55,6 +55,16 @@
         return trackNum;
     });
 }
+var input = document.getElementById("myArtist");
+input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("mybtn").click();
+
+    }
+});
+
+
 // getSongName takes the trackId to get the name of the specific song. 
 let getSongName = function (trackId) {
     let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.get?format=json&track_id=${trackId}&apikey=c42ef466fff57d1c817a1efd2f2ebf38`;
