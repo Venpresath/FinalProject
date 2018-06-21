@@ -81,7 +81,6 @@ let getSongName = function (trackId) {
         console.log(songName);
         return songName;
     });
-    
 }
 $('input').keypress(function (e) {
     if (e.which == 13) {
