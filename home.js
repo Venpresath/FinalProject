@@ -9,12 +9,7 @@
         controller: function (service) {
             let vm = this;
             vm.artist = "";
-            vm.lyrics = "";
-            vm.guess = "";
-            vm.result = "";
-            vm.wins = 0;
-            vm.losses = 0;
-            vm.condition = "";
+
 // guessSong function will determine if the users answer is correct or not and give an appropriate response
             vm.guessSong = function (guess) {
                 if (guess.toLowerCase() == vm.songName.toLowerCase()) {
