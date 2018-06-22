@@ -71,6 +71,9 @@ let getSongName = function (trackId) {
         } else if (songName.indexOf("(") > -1) {
             songName = songName.substring(0, songName.indexOf("(") - 1);
             return songName;
+        }else if(songName.indexOf("?") > -1) {
+            songName = songName.substring(0, songName.indexOf("?"));
+            return songName;
         }
         console.log(songName);
         return songName;

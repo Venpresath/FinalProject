@@ -4,7 +4,7 @@
         template: `
         <div ng-init="$ctrl.getTrackId()">
         <div ng-show="$ctrl.load" class="preloader">
-            <!-- image here via CSS -->
+        <img class="loadingImage" src="loader.gif">
         </div>
             <div class="tracker">
                 <span ng-repeat="conds in $ctrl.count"class = "winContainer"><i class={{conds.class}}></i></span>
@@ -26,6 +26,7 @@
             let vm = this;
             vm.load = true;
             vm.artist = "";
+            vm.artistid="";
             vm.lyrics = "";
             vm.guess = "";
             vm.result = "";
@@ -37,11 +38,15 @@
             vm.resultImg = "";
             // guessSong function will determine if the users answer is correct or not and give an appropriate response
             vm.guessSong = function (guess) {
+                if(guess.indexOf("?") > -1) {
+                    guess = guess.substring(0, guess.indexOf("?"));
+                    return guess;
+                }
                 if (guess.toLowerCase() == vm.songName.toLowerCase()) {
                     console.log("correct");
                     vm.result = "correct";
                     vm.wins++;
-                    if (vm.wins === 1) {
+                    if (vm.wins === 5) {
                         vm.condition = "you win!";
                         vm.wins = 0;
                         vm.losses = 0;
@@ -61,7 +66,7 @@
                     console.log(vm.count);
                     vm.result = "Do you even listen to " + service.beArtist() + "? The answer was: " + vm.songName + ".";
                     vm.losses++;
-                    if (vm.losses === 1) {
+                    if (vm.losses === 3) {
                         vm.condition = "you lose!";
                         // if user lose count reaches 3 reset wins and losses 0. Reset start again. 
                         vm.wins = 0;

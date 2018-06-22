@@ -27,6 +27,20 @@
 }
 
 .preloader {
-    padding: 50px;
-    background: url('loader.gif') no-repeat 50% 50% transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    top: 0%;
+    left:0%;
+    right: 0%;
+    bottom: 0%;
+    z-index: 5;
+    position: absolute;
+}
+
+.loadingImage{
+    
+    margin: 0 auto;
+    position: absolute;
 }
