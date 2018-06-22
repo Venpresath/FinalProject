@@ -77,7 +77,7 @@ let getSongName = function (trackId) {
 }
 $('input').keypress(function (e) {
     if (e.which == 13) {
-      $('button').click();
+      $('.mybtn').click();
       return false;
     }
   });

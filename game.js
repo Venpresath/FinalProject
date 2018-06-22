@@ -2,7 +2,6 @@
 {
     let game = {
         template: `
-        <div class="background" ng-show="$ctrl.background">
         <div ng-init="$ctrl.getTrackId()">
             <div class="tracker">
                 <span ng-repeat="conds in $ctrl.count"class = "winContainer"><i class={{conds.class}}></i></span>
@@ -12,9 +11,9 @@
                 <input class = "input" type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button class="mybtn" ng-click="$ctrl.getSongName($ctrl.songNum); $ctrl.getTrackId($ctrl.songNum)">GEET'EM</button>
                 <p> Result: {{$ctrl.result}} {{$ctrl.condition}}</p>
             </div>
-            <div class="modal" ng-show="$ctrl.show">{{$ctrl.modalText}}<img src="{{$ctrl.resultImg}}" width="200px"><a href="#!/home"><button>Play again?</button></a></div>
+            <div class="background" ng-show="$ctrl.background">
+            <div class="modal" ng-show="$ctrl.show">{{$ctrl.modalText}}<img src="{{$ctrl.resultImg}}" width="200px"><a href="#!/home"><button>Play again?</button></a></div></div>
 
-        </div>
         </div>
         `,
         // empty strings are created here that are filled in when a specific artist, lyric, guess is called. 
@@ -46,6 +45,7 @@
                         vm.modalText = "You win!";
                         vm.resultImg = "https://i.gifer.com/Wvua.gif";
                         vm.show =! vm.show;
+                        vm.background =! vm.background;
                     }
                     vm.count.push({ class: "fas fa-trophy" });
                     console.log(vm.count);
@@ -113,7 +113,7 @@
 
             $('input').keypress(function (e) {
                 if (e.which == 13) {
-                    $('button').click();
+                    $('.mybtn').click();
                     return false;
                 }
             });
