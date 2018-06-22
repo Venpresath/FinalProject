@@ -1,0 +1,27 @@
+.background{
+    background:rgba(0, 0, 0, 0.6);
+    top: 0%;
+    left:0%;
+    right: 0%;
+    bottom: 0%;
+    z-index: 5;
+    position: absolute;
+}
+.modal {
+    top: 10%;
+    left:10%;
+    margin: 0 auto;
+    z-index: 10;
+    border: 1px solid black;
+    position: fixed;
+    background-color: white;
+}
+.content {
+    z-index: 0;
+    position: relative;
+}
+
+.tracker {
+    z-index: 0;
+    position: relative;
+}
