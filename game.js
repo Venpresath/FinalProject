@@ -12,7 +12,7 @@
                 <p> Result: {{$ctrl.result}} {{$ctrl.condition}}</p>
             </div>
             <div class="background" ng-show="$ctrl.background">
-            <div class="modal" ng-show="$ctrl.show">{{$ctrl.modalText}}<img src="{{$ctrl.resultImg}}" width="200px"><a href="#!/home"><button>Play again?</button></a></div></div>
+            <div class="modal" ng-show="$ctrl.show">{{$ctrl.modalText}}<br/><img src="{{$ctrl.resultImg}}" width="150px"><a href="#!/home"><button>Play again?</button></a></div></div>
 
         </div>
         `,
@@ -36,7 +36,7 @@
                     console.log("correct");
                     vm.result = "correct";
                     vm.wins++;
-                    if (vm.wins === 5) {
+                    if (vm.wins === 1) {
                         vm.condition = "you win!";
                         vm.wins = 0;
                         vm.losses = 0;
