@@ -2,6 +2,7 @@
 {
     let service = function ($http) {
         let vm = this;
+        let load = true;
         let trackId = 0;
         let lyrics = "";
         var array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -29,8 +30,8 @@
         // Grabs a snippet of lyrics from our API. Also updates the lyrics variable. 
         let getLyrics = function (trackId) {
             let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.snippet.get?format=json&track_id=${trackId}&apikey=c42ef466fff57d1c817a1efd2f2ebf38`
+            
             return $http.get(url).then(function (response) {
-
                 let lyrics = response.data.message.body.snippet.snippet_body;
                 setLyrics(lyrics);
                 return lyrics;
@@ -60,6 +61,7 @@
 // getSongName takes the trackId to get the name of the specific song. 
 let getSongName = function (trackId) {
     let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.get?format=json&track_id=${trackId}&apikey=c42ef466fff57d1c817a1efd2f2ebf38`;
+    
     return $http.get(url).then(function (response) {
         console.log(url);
         var songName = response.data.message.body.track.track_name;
@@ -90,7 +92,8 @@ return {
     setLyrics,
     getSongName,
     beArtist,
-    setArtist
+    setArtist,
+    load
 };
 
 }

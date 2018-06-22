@@ -25,3 +25,8 @@
     z-index: 0;
     position: relative;
 }
+
+.preloader {
+    padding: 50px;
+    background: url('loader.gif') no-repeat 50% 50% transparent;
+}

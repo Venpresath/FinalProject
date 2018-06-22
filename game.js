@@ -3,16 +3,20 @@
     let game = {
         template: `
         <div ng-init="$ctrl.getTrackId()">
+        <div ng-show="$ctrl.load" class="preloader">
+            <!-- image here via CSS -->
+        </div>
             <div class="tracker">
                 <span ng-repeat="conds in $ctrl.count"class = "winContainer"><i class={{conds.class}}></i></span>
-            </div>
-            <div class="content">
-                <p>Lyric: {{$ctrl.lyrics}} </p>
-                <input class = "input" type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button class="mybtn" ng-click="$ctrl.getSongName($ctrl.songNum); $ctrl.getTrackId($ctrl.songNum)">GEET'EM</button>
-                <p> Result: {{$ctrl.result}} {{$ctrl.condition}}</p>
-            </div>
+                </div>
+                <div class="content">
+                
+                    <p>Lyric: {{$ctrl.lyrics}} </p>
+                    <input class = "input" type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button class="mybtn" ng-click="$ctrl.getSongName($ctrl.songNum); $ctrl.getTrackId($ctrl.songNum)">GEET'EM</button>
+                    <p> Result: {{$ctrl.result}} {{$ctrl.condition}}</p>
+                </div>
             <div class="background" ng-show="$ctrl.background">
-            <div class="modal" ng-show="$ctrl.show">{{$ctrl.modalText}}<br/><img src="{{$ctrl.resultImg}}" width="150px"><a href="#!/home"><button>Play again?</button></a></div></div>
+            <div class="modal" ng-show="$ctrl.show">{{$ctrl.modalText}}<br/><img src="{{$ctrl.resultImg}}" width="150px"><a href="#!/home"><button class="playAgain">Play again?</button></a></div></div>
 
         </div>
         `,
@@ -20,6 +24,7 @@
         controller: function (service) {
 
             let vm = this;
+            vm.load = true;
             vm.artist = "";
             vm.lyrics = "";
             vm.guess = "";
@@ -76,6 +81,8 @@
                 service.getLyrics(vm.songNum).then(function () {
                     vm.lyrics = service.beLyrics();
                     return vm.lyrics;
+                }).finally(function(){
+                    vm.load = false;
                 });
             }
 
@@ -106,6 +113,9 @@
             //Clears value from input on click
             $("button").on("click", function () {
                 $("input").val("");
+            });
+            $(".playAgain").on("click", function(){
+                window.location.reload();
             });
 
 
