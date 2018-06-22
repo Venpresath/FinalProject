@@ -37,7 +37,7 @@
                     console.log("correct");
                     vm.result = "correct";
                     vm.wins++;
-                    if (vm.wins === 1) {
+                    if (vm.wins === 5) {
                         vm.condition = "you win!";
                         vm.wins = 0;
                         vm.losses = 0;
