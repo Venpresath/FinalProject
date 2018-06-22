@@ -4,7 +4,7 @@
         template: `<div ng-init="$ctrl.getTrackId()">
         <p>Lyric: {{$ctrl.lyrics}} </p>
         <p> Song Name: {{$ctrl.songName}}</p>
-        <input type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button ng-click="$ctrl.getSongName($ctrl.songNum); $ctrl.getTrackId($ctrl.songNum)">GEET'EM</button>
+        <input type = "text" class="guessInput" placeholder="Guess the song" ng-model="$ctrl.guess"><button ng-click="$ctrl.getSongName($ctrl.songNum); class="guessButton" $ctrl.getTrackId($ctrl.songNum)">GEET'EM</button>
         <p> Result: {{$ctrl.result}} {{$ctrl.condition}}</p>
         </div>`,
         // empty strings are created here that are filled in when a specific artist, lyric, guess is called. 
