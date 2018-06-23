@@ -45,7 +45,9 @@
             let n = array[j];
             console.log(j);
     let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.search?format=json&q_artist=${artist}&s_track_rating=desc&apikey=c42ef466fff57d1c817a1efd2f2ebf38`
-    return $http.get(url).then(function (response) {
+    
+    return $http.get(url)
+    .then(function (response) {
 
         //create random number generator between 1 and 10 to find the index of the song. 
         //varying difficulties can change the number generated. 
@@ -55,7 +57,7 @@
         array.splice(j,1);
         console.log(array);
         return trackNum;
-    });
+    })
 }
 // getSongName takes the trackId to get the name of the specific song. 
 let getSongName = function (trackId) {

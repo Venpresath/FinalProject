@@ -36,11 +36,11 @@
                     console.log("correct");
                     vm.result = "correct";
                     vm.wins++;
-                    if (vm.wins === 1) {
+                    if (vm.wins === 5) {
                         vm.condition = "you win!";
                         vm.wins = 0;
                         vm.losses = 0;
-                        //disables button after 10 entries
+                        
                         $(".mybtn").prop('disabled', true);
                         vm.modalText = "You win!";
                         vm.resultImg = "https://i.gifer.com/Wvua.gif";
@@ -56,7 +56,7 @@
                     console.log(vm.count);
                     vm.result = "Do you even listen to " + service.beArtist() + "? The answer was: " + vm.songName + ".";
                     vm.losses++;
-                    if (vm.losses === 1) {
+                    if (vm.losses === 3) {
                         vm.condition = "you lose!";
                         // if user lose count reaches 3 reset wins and losses 0. Reset start again. 
                         vm.wins = 0;
