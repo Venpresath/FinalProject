@@ -25,3 +25,22 @@
     z-index: 0;
     position: relative;
 }
+
+.preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    top: 0%;
+    left:0%;
+    right: 0%;
+    bottom: 0%;
+    z-index: 5;
+    position: absolute;
+}
+
+.loadingImage{
+    
+    margin: 0 auto;
+    position: absolute;
+}
