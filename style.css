@@ -1,3 +1,16 @@
+ h1{
+    font-family: 'Shrikhand', cursive;
+ }
+
+ body{
+    font-family: 'Roboto', sans-serif;
+    color: rgb(243, 237, 237);
+ }
+
+ input{
+     border-radius: 3px;
+ }
+ 
  .background{
     background:rgba(0, 0, 0, 0.6);
     top: 0%;
@@ -43,4 +56,16 @@
     
     margin: 0 auto;
     position: absolute;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: orange;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    body {
+        background-color: rgb(168, 72, 72);
+    }
 }

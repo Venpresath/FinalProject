@@ -5,6 +5,7 @@
         let load = true;
         let trackId = 0;
         let lyrics = "";
+        // let difficulty = {};
         var array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
         let winsneed = 0;
         let lossesallowed= 0;
@@ -87,9 +88,13 @@ let getSongName = function (trackId) {
     });
 }
 
+    let difficulty = function () {
+        return difficulty;
+        }
 
-
-  
+    let difficultyType = function(difficultyResult) {
+        difficulty = difficultyResult;
+    }
 
 $('input').keypress(function (e) {
     if (e.which == 13) {
@@ -108,7 +113,9 @@ return {
     getSongName,
     beArtist,
     setArtist,
-    load
+    load,
+    difficulty,
+    difficultyType
 };
 
 }

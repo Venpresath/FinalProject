@@ -10,9 +10,9 @@
 			.when("/game", {
 				template: "<game></game>"
 			})
-			// .when("/settings",{
-			// 	template: "<settings></settings>"
-			// })
+			.when("/settings",{
+				template: "<settings></settings>"
+			})
 			.otherwise({ redirectTo: "/home" });
 	});
 }
