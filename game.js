@@ -98,11 +98,13 @@
 
                 }
             }
-            // getLyrics using the trackId to get lyrics
+            // getLyrics using the trackId to get lyrics. If lyric not found, call function again. 
             vm.getLyrics = function () {
                 service.getLyrics(vm.songNum).then(function (response) {
                     if (response === "") {
                         console.log("Lyrics not found");
+                        vm.getTrackId(service.beArtist());
+                        vm.wins++;
                     }
                     vm.lyrics = service.beLyrics();
                     return vm.lyrics;

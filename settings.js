@@ -9,12 +9,7 @@
 
         controller: function(service){
             let vm = this;
-            vm.difficulty= 0;
-            vm.easy= 3;
-            vm.medium= 5;
-            vm.hard= 7;
-            vm.insane= 9;
-
+            
             vm.difficulty = function(a, b){
                 let gameType = {win:a, loss: b}
                 service.difficultyType(gameType);
