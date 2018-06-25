@@ -26,7 +26,7 @@
             let vm = this;
             vm.load = true;
             vm.artist = "";
-            vm.artistid="";
+            vm.artistid = "";
             vm.lyrics = "";
             vm.guess = "";
             vm.result = "";
@@ -36,9 +36,10 @@
             vm.count = [];
             vm.modalText = "";
             vm.resultImg = "";
+
             // guessSong function will determine if the users answer is correct or not and give an appropriate response
             vm.guessSong = function (guess) {
-                if(guess.indexOf("?") > -1) {
+                if (guess.indexOf("?") > -1) {
                     guess = guess.substring(0, guess.indexOf("?"));
                     return guess;
                 }
@@ -50,12 +51,12 @@
                         vm.condition = "you win!";
                         vm.wins = 0;
                         vm.losses = 0;
-                        
+
                         $(".mybtn").prop('disabled', true);
                         vm.modalText = "You win!";
                         vm.resultImg = "https://i.gifer.com/Wvua.gif";
-                        vm.show =! vm.show;
-                        vm.background =! vm.background;
+                        vm.show = !vm.show;
+                        vm.background = !vm.background;
                     }
                     vm.count.push({ class: "fas fa-trophy" });
                     console.log(vm.count);
@@ -64,7 +65,22 @@
                     console.log("guess again");
                     vm.count.push({ class: "fas fa-times" });
                     console.log(vm.count);
-                    vm.result = "Do you even listen to " + service.beArtist() + "? The answer was: " + vm.songName + ".";
+
+                    vm.results = [
+                        `Do you even listen to ${service.beArtist()}? The answer was: ${vm.songName}.`,
+                        `Dang, even my mother knew that this song was by ${service.beArtist()}. The song is: ${vm.songName}.`,
+                        `Hahaha.. NOPE!! This song is by ${service.beArtist()}. The song is called: ${vm.songName}.`
+                    ];
+
+                    //randomize lose response
+                    let randRes = function () {
+                        var i = Math.floor(Math.random() * (vm.results.length - 1));
+                        return vm.results[i];
+                    }
+
+                    //change vm.result to equal the randomized index from 'results'
+                    vm.result = randRes();
+
                     vm.losses++;
                     if (vm.losses === 3) {
                         vm.condition = "you lose!";
@@ -72,21 +88,24 @@
                         vm.wins = 0;
                         vm.losses = 0;
                         $(".mybtn").prop('disabled', true);
-                        vm.modalText = "You are such a loser";
+                        vm.modalText = "You are such a loser! The correct answer was: " + vm.songName;
                         vm.resultImg = "https://media1.popsugar-assets.com/files/thumbor/B8lOru9rf0j1aOafrCxnqK6fKeA/fit-in/1200x630/filters:format_auto-!!-:strip_icc-!!-:fill-!white!-/2017/05/12/985/n/3019466/53c5add94ca9772d_pizza2/i/Pizza-you-when-youre-sad.gif";
-                        vm.show =! vm.show;
-                        vm.background =! vm.background;
+                        vm.show = !vm.show;
+                        vm.background = !vm.background;
 
                     }
-                    return vm.result;
+
                 }
             }
             // getLyrics using the trackId to get lyrics
             vm.getLyrics = function () {
-                service.getLyrics(vm.songNum).then(function () {
+                service.getLyrics(vm.songNum).then(function (response) {
+                    if (response === "") {
+                        console.log("Lyrics not found");
+                    }
                     vm.lyrics = service.beLyrics();
                     return vm.lyrics;
-                }).finally(function(){
+                }).finally(function () {
                     vm.load = false;
                 });
             }
@@ -114,12 +133,13 @@
                         return vm.songNum;
                     });
             }
+
             //JQuery Stuff
             //Clears value from input on click
             $("button").on("click", function () {
                 $("input").val("");
             });
-            $(".playAgain").on("click", function(){
+            $(".playAgain").on("click", function () {
                 window.location.reload();
             });
 

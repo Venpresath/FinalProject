@@ -29,7 +29,7 @@
         }
         // Grabs a snippet of lyrics from our API. Also updates the lyrics variable. 
         let getLyrics = function (trackId) {
-            let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.snippet.get?format=json&track_id=${trackId}&apikey=c42ef466fff57d1c817a1efd2f2ebf38`
+            let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.snippet.get?format=json&track_id=${trackId}&apikey=${APIKey}`
             
             return $http.get(url).then(function (response) {
                 let lyrics = response.data.message.body.snippet.snippet_body;
@@ -45,7 +45,7 @@
             j = Math.floor(Math.random() * (i));
             let n = array[j];
             console.log(j);
-    let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.search?format=json&q_artist=${artist}&s_track_rating=desc&apikey=c42ef466fff57d1c817a1efd2f2ebf38`
+    let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.search?format=json&q_artist=${artist}&s_track_rating=desc&apikey=${APIKey}`
     
     return $http.get(url)
     .then(function (response) {
@@ -82,12 +82,22 @@ let getSongName = function (trackId) {
     });
     
 }
+
+    // let difficulty = function () {
+    //     return difficulty;
+    //     }
+
+    // let difficultyType = function(difficultyResult) {
+    //     difficult = difficultyResult;
+    // }
+
 $('input').keypress(function (e) {
     if (e.which == 13) {
       $('.mybtn').click();
       return false;
     }
   });
+
 
 
 return {
