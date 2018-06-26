@@ -1,13 +1,16 @@
 /* home page styling */
 h1{
-    font-family: 'Shrikhand', cursive;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.8rem;
     text-shadow: 3px 4px 10px black;
  }
 
  body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(black, rgb(122, 26, 195)) no-repeat center;
+    height: 100vh;
     color: rgb(243, 237, 237);
     font-size: 1.5rem;
     text-align: center;
@@ -21,12 +24,15 @@ h1{
 
  .mybtnHome{
      border: none;
-     color:black;
+     color:white;
      border-radius: 10px;
-     background-color: white;
+     background-color: rgba(255, 255, 255, 0.3);
+     box-shadow: 3px 3px 10px black;
      padding: 50%;
      margin-top: 70%;
      font-size: 1rem;
+     letter-spacing: 2px;
+     
      
 }
 
@@ -35,8 +41,8 @@ h1{
     color: white;
 }
 .mybtnHome:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
+    /* box-shadow: 0px 5px #666;
+    background-color: #3e8e41; */
     transform: translateY(4px);
 }
 
@@ -46,8 +52,15 @@ h1{
     border-radius: 10px;
     display: inline-block;
     font-size: 1.2rem;
-    padding: 10px 14px;
+    padding: 40px 38px;
     margin-bottom: 2%;
+    color: white;
+    box-shadow: 0px 3px 10px 0px black;
+    background: url("https://media.giphy.com/media/3o7bu9zwfieCd1R9HG/giphy.gif");
+ }
+
+ input {
+     color: white;
  }
  
  .background{
@@ -114,22 +127,25 @@ flex-direction: column;
     background-color: white;
     border-radius: 5px;
     border: none;
-    color:  rgb(168, 72, 72);
+    /* color:  rgb(168, 72, 72); */
     font-family:  'Shrikhand', cursive ; 
     font-size: 30px;  
     margin-bottom: 3%;
     box-shadow: 3px 4px 10px black;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
 }
 
 .difficultyButton:hover{
-    background-color:rgb(168, 72, 72); 
+    background-color:rgb(168, 72, 155); 
     color:white;  
-    box-shadow: 1px 2px 10px black;     
+    box-shadow: 1px 2px 10px black;
+    margin-bottom: 30px;     
 }
 
 
 .difficultyButton:active {
-    background-color: red;
+    background-color: purple;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
@@ -139,14 +155,9 @@ flex-direction: column;
 .fas {
     width: 10vw;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 600px) {
     body {
         background-color: orange;
     }
 }
 
-@media only screen and (max-width: 992px) {
-    body {
-        background-color: rgb(168, 72, 72);
-    }
-}
