@@ -166,12 +166,33 @@ flex-direction: column;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.3);
     box-shadow: 3px 3px 10px black;
-    padding: 30%, 130%, 30%, 130%;
+    padding: 10% 22%;
     margin: 0 auto;
     font-size: 1rem;
     letter-spacing: 2px;
+    display: block;
+    
 }
 
+.inputGame{
+    border: none;
+    border-radius: 10px;
+    display: inline-block;
+    color: white;
+    font-size: 1.2rem;
+    padding: 2% 3%;
+    margin-bottom: 50%;
+    background: url("https://media.giphy.com/media/3o7bu9zwfieCd1R9HG/giphy.gif");
+ }
+
+ input::placeholder {
+     color: white;
+     font-family: 'Montserrat', sans-serif;
+ }
+ input:focus {
+     outline: none;
+     border: 2px solid white;
+ }
 
 
 .fas {
