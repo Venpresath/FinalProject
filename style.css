@@ -1,7 +1,9 @@
+/* home page styling */
 h1{
     font-family: 'Shrikhand', cursive;
     text-align: center;
     font-size: 3rem;
+    text-shadow: 3px 4px 10px black;
  }
 
 
@@ -23,17 +25,30 @@ h1{
      color:black;
      border-radius: 10px;
      background-color: white;
-     padding: 30%;
+     padding: 50%;
      margin-top: 70%;
      font-size: 1rem;
+     
 }
 
- inputHome{
-     border-radius: 10px;
-     display: inline-block;
-     padding: 4%;
-     font-size: 1.2rem;
-     margin-bottom: 2%;
+.mybtnHome:hover {
+    background-color: #4CAF50; 
+    color: white;
+}
+.mybtnHome:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+
+.inputHome{
+    border: none;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 10px 14px;
+    margin-bottom: 2%;
  }
  
  .background{
@@ -45,7 +60,11 @@ h1{
     z-index: 5;
     position: absolute;
 }
+
+/* end home page*/
+/* start modal*/
 .modal {
+
     top: 10%;
     left:10%;
     margin: 0 auto;
@@ -58,12 +77,14 @@ h1{
     z-index: 0;
     position: relative;
 }
-
+/* end modal */
+/* start game page */
 .tracker {
     z-index: 0;
     position: relative;
 }
 
+/* start loading image */
 .preloader {
     display: flex;
     justify-content: center;
@@ -82,11 +103,48 @@ h1{
     margin: 0 auto;
     position: absolute;
 }
+<<<<<<< HEAD
 .settingsContent{
     display: flex;
     flex-direction: column;
+=======
+/* start setting page */
+.settingsContent{
+display: flex;
+flex-direction: column;
+    
+>>>>>>> cdd552722e8d2e1a834155e44b0989ebf6d9626e
 }
 
+.difficultyButton{
+    width: 70%;
+    padding-top: 40px;
+    background-color: white;
+    height: 200 px;
+    border-radius: 5px;
+    color:  rgb(168, 72, 72);
+    font-family:  'Shrikhand', cursive ; 
+    font-size: 30px; 
+    align-content: center;  
+}
+
+.difficultyButton:hover{
+    background-color:rgb(168, 72, 72); 
+    color:white;       
+}
+
+
+.difficultyButton:active {
+    background-color: red;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* end settings page */
+/* Game Page */
+.fas {
+    width: 10vw;
+}
 @media only screen and (max-width: 600px) {
     body {
         background-color: orange;
