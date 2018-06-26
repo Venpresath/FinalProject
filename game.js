@@ -10,10 +10,12 @@
                 <span ng-repeat="conds in $ctrl.count"class = "winContainer"><i class={{conds.class}}></i></span>
                 </div>
                 <div class="content">
+    
                 
-                    <p>Lyric: {{$ctrl.lyrics}} </p>
+                    <p>"{{$ctrl.lyrics}}"</p>
+                    <p>- {{$ctrl.artist}} </p>
                     <input class = "input" type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button class="mybtn" ng-click="$ctrl.getSongName($ctrl.songNum); $ctrl.getTrackId($ctrl.songNum)">GEET'EM</button>
-                    <p> Result: {{$ctrl.result}} {{$ctrl.condition}}</p>
+                    <p>{{$ctrl.result}}</p>
                 </div>
             <div class="background" ng-show="$ctrl.background">
             <div class="modal" ng-show="$ctrl.show">{{$ctrl.modalText}}<br/><img src="{{$ctrl.resultImg}}" width="150px"><a href="#!/home"><button class="playAgain">Play again?</button></a></div></div>
@@ -32,7 +34,6 @@
             vm.result = "";
             vm.wins = 0;
             vm.losses = 0;
-            vm.condition = "";
             vm.count = [];
             vm.modalText = "";
             vm.resultImg = "";
@@ -46,10 +47,9 @@
                 }
                 if (guess.toLowerCase() == vm.songName.toLowerCase()) {
                     console.log("correct");
-                    vm.result = "correct";
+                    vm.result = "Correct!";
                     vm.wins++;
                     if (vm.wins === vm.gameType.win) {
-                        vm.condition = "you win!";
                         vm.wins = 0;
                         vm.losses = 0;
 
@@ -69,13 +69,13 @@
 
                     vm.results = [
                         `Do you even listen to ${service.beArtist()}? The answer was: ${vm.songName}.`,
-                        `Dang, even my mother knew that this song was by ${service.beArtist()}. The song is: ${vm.songName}.`,
+                        `Dang, even my mother knew that this song was ${vm.songName}.`,
                         `Hahaha.. NOPE!! This song is by ${service.beArtist()}. The song is called: ${vm.songName}.`
                     ];
 
                     //randomize lose response
                     let randRes = function () {
-                        var i = Math.floor(Math.random() * (vm.results.length - 1));
+                        var i = Math.floor(Math.random() * (vm.results.length));
                         return vm.results[i];
                     }
 
@@ -84,12 +84,11 @@
 
                     vm.losses++;
                     if (vm.losses === vm.gameType.loss) {
-                        vm.condition = "you lose!";
                         // if user lose count reaches 3 reset wins and losses 0. Reset start again. 
                         vm.wins = 0;
                         vm.losses = 0;
                         $(".mybtn").prop('disabled', true);
-                        vm.modalText = "You are such a loser! The correct answer was: " + vm.songName;
+                        vm.modalText = "You are a loser! The correct answer was: " + vm.songName;
                         vm.resultImg = "https://media1.popsugar-assets.com/files/thumbor/B8lOru9rf0j1aOafrCxnqK6fKeA/fit-in/1200x630/filters:format_auto-!!-:strip_icc-!!-:fill-!white!-/2017/05/12/985/n/3019466/53c5add94ca9772d_pizza2/i/Pizza-you-when-youre-sad.gif";
                         vm.show = !vm.show;
                         vm.background = !vm.background;
@@ -107,14 +106,11 @@
                         vm.wins++;
                     }
                     vm.lyrics = service.beLyrics();
+                    vm.artist = service.beArtist;
                     return vm.lyrics;
                 }).finally(function () {
                     vm.load = false;
                 });
-            }
-
-            vm.getArtist = function () {
-                vm.artist = service.beArtist();
             }
             // getSongName using the trackId to getSongName
             vm.getSongName = function () {
@@ -131,6 +127,7 @@
                 service.getTrackId(service.beArtist())
                     .then(function (response) {
                         console.log("It's working");
+                        vm.artist == service.beArtist();
                         vm.songNum = response;
                         vm.getLyrics();
                         return vm.songNum;

@@ -7,6 +7,9 @@
         let lyrics = "";
         // let difficulty = {};
         var array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let winsneed = 0;
+        let lossesallowed= 0;
+        let beArtist = "";
         const APIKey = "c42ef466fff57d1c817a1efd2f2ebf38";
 
         // beArtist returns data from the api
@@ -61,6 +64,9 @@
         return trackNum;
     })
 }
+
+
+
 // getSongName takes the trackId to get the name of the specific song. 
 let getSongName = function (trackId) {
     let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.get?format=json&track_id=${trackId}&apikey=c42ef466fff57d1c817a1efd2f2ebf38`;
@@ -81,7 +87,6 @@ let getSongName = function (trackId) {
         console.log(songName);
         return songName;
     });
-    
 }
 
     let difficulty = function () {
@@ -111,7 +116,8 @@ return {
     setArtist,
     load,
     difficulty,
-    difficultyType
+    difficultyType,
+    beArtist
 };
 
 }
