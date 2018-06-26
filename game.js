@@ -106,7 +106,6 @@
                         vm.wins++;
                     }
                     vm.lyrics = service.beLyrics();
-                    vm.artist = service.beArtist;
                     return vm.lyrics;
                 }).finally(function () {
                     vm.load = false;
@@ -127,7 +126,8 @@
                 service.getTrackId(service.beArtist())
                     .then(function (response) {
                         console.log("It's working");
-                        vm.artist == service.beArtist();
+                        vm.artist = service.beArtist();
+                        console.log("vm.artist is " + vm.artist)
                         vm.songNum = response;
                         vm.getLyrics();
                         return vm.songNum;
