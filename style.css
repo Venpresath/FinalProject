@@ -1,14 +1,19 @@
 /* home page styling */
 h1{
-    font-family: 'Shrikhand', cursive;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Lobster Two', cursive;
+    letter-spacing: 2px;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.8rem;
     text-shadow: 3px 4px 10px black;
  }
 
-
  body{
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Righteous', cursive;
+    letter-spacing: 1px;
+    background: linear-gradient(black, rgb(122, 26, 195)) no-repeat center;
+    height: 100vh;
     color: rgb(243, 237, 237);
     font-size: 1.5rem;
     text-align: center;
@@ -18,17 +23,21 @@ h1{
      display: flex;
      flex-direction: column;
      align-items: center;
+     align-self: center;
  }
 
  .mybtnHome{
      border: none;
-     color:black;
+     color:white;
      border-radius: 10px;
-     background-color: white;
-     padding: 50%;
-     margin-top: 70%;
+     background-color: rgba(255, 255, 255, 0.3);
+     box-shadow: 3px 3px 10px black;
+     padding: 30%, 130%, 30%, 130%;
+     margin: auto 12px auto -50%;
      font-size: 1rem;
-     
+     letter-spacing: 2px;
+
+
 }
 
 .mybtnHome:hover {
@@ -36,21 +45,30 @@ h1{
     color: white;
 }
 .mybtnHome:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
+    /* box-shadow: 0px 5px #666;
+    background-color: #3e8e41; */
+    /* transform: translateY(4px); */
 }
-
 
 .inputHome{
     border: none;
     border-radius: 10px;
     display: inline-block;
+    color: white;
     font-size: 1.2rem;
-    padding: 10px 14px;
-    margin-bottom: 2%;
+    padding: 2% 3%;
+    margin-bottom: 5%;
+    background: url("https://media.giphy.com/media/3o7bu9zwfieCd1R9HG/giphy.gif");
  }
- 
+
+ input::placeholder {
+     color: white;
+     font-family: 'Montserrat', sans-serif;
+ }
+ input:focus {
+     outline: none;
+     border: 2px solid white;
+ }
  .background{
     background:rgba(0, 0, 0, 0.6);
     top: 0%;
@@ -84,6 +102,8 @@ h1{
     position: relative;
 }
 
+
+
 /* start loading image */
 .preloader {
     display: flex;
@@ -103,56 +123,84 @@ h1{
     margin: 0 auto;
     position: absolute;
 }
-<<<<<<< HEAD
-.settingsContent{
-    display: flex;
-    flex-direction: column;
-=======
 /* start setting page */
 .settingsContent{
 display: flex;
 flex-direction: column;
     
->>>>>>> cdd552722e8d2e1a834155e44b0989ebf6d9626e
 }
 
 .difficultyButton{
     width: 70%;
-    padding-top: 40px;
     background-color: white;
-    height: 200 px;
     border-radius: 5px;
-    color:  rgb(168, 72, 72);
+    border: none;
+    /* color:  rgb(168, 72, 72); */
     font-family:  'Shrikhand', cursive ; 
-    font-size: 30px; 
-    align-content: center;  
+    font-size: 30px;  
+    margin-bottom: 3%;
+    box-shadow: 3px 4px 10px black;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
 }
 
 .difficultyButton:hover{
-    background-color:rgb(168, 72, 72); 
-    color:white;       
+    background-color:rgb(168, 72, 155); 
+    color:white;  
+    box-shadow: 1px 2px 10px black;    
 }
 
 
 .difficultyButton:active {
-    background-color: red;
+    background-color: purple;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
 
 /* end settings page */
 /* Game Page */
+
+.mybtnGame {
+    border: none;
+    color:white;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 3px 3px 10px black;
+    padding: 10% 22%;
+    margin: 0 auto;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    display: block;
+    
+}
+
+.inputGame{
+    border: none;
+    border-radius: 10px;
+    display: inline-block;
+    color: white;
+    font-size: 1.2rem;
+    padding: 2% 3%;
+    margin-bottom: 50%;
+    background: url("https://media.giphy.com/media/3o7bu9zwfieCd1R9HG/giphy.gif");
+ }
+
+ input::placeholder {
+     color: white;
+     font-family: 'Montserrat', sans-serif;
+ }
+ input:focus {
+     outline: none;
+     border: 2px solid white;
+ }
+
+
 .fas {
     width: 10vw;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 600px) {
     body {
         background-color: orange;
     }
 }
 
-@media only screen and (max-width: 992px) {
-    body {
-        background-color: rgb(168, 72, 72);
-    }
-}
