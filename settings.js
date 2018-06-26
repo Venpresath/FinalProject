@@ -1,10 +1,11 @@
 "use strict";
 {
     let settings = {
-        template: `<a href="#!/game"><button ng-click="$ctrl.difficulty(3,3)">Easy</button><a>
-       <a href="#!/game"> <button ng-clck="$ctrl.difficulty(5,3)">Medium</button></a>
-       <a href="#!/game"> <button ng-click="$ctrl.difficulty(7,3)">Hard</button></a>
-       <a href="#!/game"> <button ng-click="$ctrl.difficulty(10,1)">Insane</button></a>`,
+        template: `<div class="settingsContent">
+        <a href="#!/game"><button class="difficultyOption" ng-click="$ctrl.difficulty(3,3)">Easy</button><a>
+       <a href="#!/game"> <button class="difficultyOption" ng-clck="$ctrl.difficulty(5,3)">Medium</button></a>
+       <a href="#!/game"> <button class="difficultyOption" ng-click="$ctrl.difficulty(7,3)">Hard</button></a>
+       <a href="#!/game"> <button class="difficultyOption" ng-click="$ctrl.difficulty(10,1)">Insane</button></a></div>`,
 
 
         controller: function(service){
