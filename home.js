@@ -1,10 +1,10 @@
 "use strict";
 {   
     let home = {
-        template: `<div>
-        <h1>MUSICBUFF </h1>
-        <p>Think you know music? Enter an artist to find out. You have 5 tries. Break a leg!</p>
-        <input type="text" placeholder="Enter an artist" ng-model="$ctrl.artist" class="input"/> <a href= "#!/game"><button class="mybtn" ng-click="$ctrl.updateArtist($ctrl.artist)">Submit</button></a>
+        template: `<div class="homeContent">
+        <h1>Music Smash</h1>
+        <p>Think you know music? <br> Enter an artist to find out!</p>
+        <input type="text" placeholder="Enter an artist" ng-model="$ctrl.artist" class="inputHome"/><a href= "#!/settings"><button class="mybtnHome" ng-click="$ctrl.updateArtist($ctrl.artist)">Begin</button></a>
         </div>`,
         // empty strings are created here that are filled in when a specific artist chosen by user.  
         controller: function (service) {

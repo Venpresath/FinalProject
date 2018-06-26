@@ -36,6 +36,7 @@
             vm.count = [];
             vm.modalText = "";
             vm.resultImg = "";
+            vm.gameType = service.difficulty();
 
             // guessSong function will determine if the users answer is correct or not and give an appropriate response
             vm.guessSong = function (guess) {
@@ -47,7 +48,7 @@
                     console.log("correct");
                     vm.result = "correct";
                     vm.wins++;
-                    if (vm.wins === 5) {
+                    if (vm.wins === vm.gameType.win) {
                         vm.condition = "you win!";
                         vm.wins = 0;
                         vm.losses = 0;
@@ -82,7 +83,7 @@
                     vm.result = randRes();
 
                     vm.losses++;
-                    if (vm.losses === 3) {
+                    if (vm.losses === vm.gameType.loss) {
                         vm.condition = "you lose!";
                         // if user lose count reaches 3 reset wins and losses 0. Reset start again. 
                         vm.wins = 0;
