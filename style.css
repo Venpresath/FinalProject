@@ -37,6 +37,12 @@ h1{
     text-align: center;
  }
 
+ span{
+    font-size: 30px;
+    /*align-content: center;
+    justify-content: center;*/
+ }
+
  .homeContent{
      display: flex;
      flex-direction: column;
@@ -48,6 +54,11 @@ h1{
  button{
     margin:auto;
     display:block;
+    cursor: pointer;
+  }
+
+  button:hover{
+    cursor: pointer;
   }
 
   a{
@@ -64,20 +75,15 @@ h1{
      display: block;
      font-size: 1rem;
      letter-spacing: 2px;
-     padding-top: 6px;
-     padding-bottom: 6px;
-     padding-left: 10px;
-     padding-right: 10px;
+     padding-top: 20%;
+     padding-bottom: 20px;
+     padding-left: 50px;
+     padding-right: 50px;
 }
 
 .mybtnHome:hover {
     background-color: purple; 
     color: white;
-}
-.mybtnHome:active {
-    /* box-shadow: 0px 5px #666;
-    background-color: #3e8e41; */
-    /* transform: translateY(4px); */
 }
 
 .inputHome{
@@ -150,28 +156,35 @@ h1{
     background: linear-gradient(black, rgb(122, 26, 195)) no-repeat center;
 }
 
-.loadingRecord {
-    margin-top: 50%;
+.loadingText {
+    position: relative;
+    /* margin-top: 60%; */
 }
+
+/* start setting page */
+
 .loadingImage{
     height: 30vh;
     margin: 0 auto;
+    position: relative;
     position: absolute;
-   
+    background: linear-gradient(black, rgb(122, 26, 195)) no-repeat center;
 }
-/* start setting page */
 .settingsContent{
 display: flex;
-flex-direction: column;
-    
+flex-direction: column;    
 }
 
 .difficultyButton{
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;
+    text-align: center;
     width: 70%;
     background-color: white;
     border-radius: 5px;
     border: none;
-    /* color:  rgb(168, 72, 72); */
     font-family:  'Shrikhand', cursive ; 
     font-size: 30px;  
     margin-bottom: 3%;
@@ -183,7 +196,9 @@ flex-direction: column;
 .difficultyButton:hover{
     background-color:rgb(168, 72, 155); 
     color:white;  
-    box-shadow: 1px 2px 10px black;    
+    box-shadow: 1px 2px 10px black;  
+    justify-content:center;
+    align-content: center;
 }
 
 
@@ -194,6 +209,16 @@ flex-direction: column;
 }
 
 /* end settings page */
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+
 /* Game Page */
 
 .mybtnGame {
@@ -271,10 +296,20 @@ flex-direction: column;
 
 .fas {
     width: 10%;
+    color: black;
 }
+.fas fa trophy {
+    width: 10%;
+    color: orange;
+}
+/* beginning of desktop size styling */
+
 @media only screen and (min-width: 600px) {
     body {
         background-color: orange;
     }
+    .appName{
+        margin-top: 3%;    
+    }    
 }
 
