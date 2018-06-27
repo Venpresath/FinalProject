@@ -1,27 +1,37 @@
 /* home page styling */
 h1{
-    /* font-family: 'Montserrat', sans-serif; */
-    font-family: 'Lobster Two', cursive;
+    font-family: 'Montserrat', sans-serif; 
     letter-spacing: 2px;
     text-align: center;
     font-size: 2.8rem;
     text-shadow: 3px 4px 10px black;
+    margin-top: 22%;
  }
 
- .record{
-     top: -50%;
+ .home{
+     top: -40%;
      position: absolute;
-     height: 100vh;
+     height: 80vh;
      z-index: -1;
-     
  }
 
- body{
+ html {
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+ }
+  body{
     /* font-family: 'Montserrat', sans-serif; */
     font-family: 'Righteous', cursive;
     letter-spacing: 1px;
     background: linear-gradient(black, rgb(122, 26, 195)) no-repeat center;
-    height: 100vh;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
     color: rgb(243, 237, 237);
     font-size: 1.5rem;
     text-align: center;
@@ -61,7 +71,7 @@ h1{
 }
 
 .mybtnHome:hover {
-    background-color: #4CAF50; 
+    background-color: purple; 
     color: white;
 }
 .mybtnHome:active {
@@ -137,12 +147,17 @@ h1{
     bottom: 0%;
     z-index: 5;
     position: absolute;
+    background: linear-gradient(black, rgb(122, 26, 195)) no-repeat center;
 }
 
+.loadingRecord {
+    margin-top: 50%;
+}
 .loadingImage{
-    
+    height: 30vh;
     margin: 0 auto;
     position: absolute;
+   
 }
 /* start setting page */
 .settingsContent{
@@ -192,7 +207,6 @@ flex-direction: column;
     font-size: 1rem;
     letter-spacing: 2px;
     display: block;
-    
 }
 
 
@@ -256,6 +270,7 @@ flex-direction: column;
 
 
 .fas {
+    width: 10%;
 }
 @media only screen and (min-width: 600px) {
     body {

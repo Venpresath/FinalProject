@@ -4,7 +4,8 @@
         template: `
         <div ng-init="$ctrl.getTrackId()">
         <div ng-show="$ctrl.load" class="preloader">
-        <img class="loadingImage" src="loader.gif">
+        <img class="record loadingImage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Vinyl_record.svg/2000px-Vinyl_record.svg.png" />
+        <p class="loadingRecord">Loading...</p>
         </div>
             <div class="tracker">
                 <span ng-repeat="conds in $ctrl.count"class = "winContainer"><i class={{conds.class}}></i></span>
@@ -14,7 +15,7 @@
                 
                     <p class="lyrics">"{{$ctrl.lyrics}}"</p>
                     <p>- {{$ctrl.artist}} </p>
-                    <input class = "inputGame" type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button class="mybtnGame" ng-click="$ctrl.getSongName($ctrl.songNum); $ctrl.getTrackId($ctrl.songNum)">GEET'EM</button>
+                    <input class = "inputGame" type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button class="mybtnGame" ng-click="$ctrl.getSongName($ctrl.songNum); $ctrl.getTrackId($ctrl.songNum)">Smash</button>
                     <p>{{$ctrl.result}}</p>
                 </div>
             <div class="background" ng-show="$ctrl.background">
