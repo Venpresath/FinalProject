@@ -143,6 +143,7 @@ h1{
     
     margin: 0 auto;
     position: absolute;
+    background: linear-gradient(black, rgb(122, 26, 195)) no-repeat center;
 }
 /* start setting page */
 .settingsContent{
@@ -257,6 +258,8 @@ flex-direction: column;
 
 .fas {
 }
+/* beginning of desktop size styling */
+
 @media only screen and (min-width: 600px) {
     body {
         background-color: orange;
