@@ -159,13 +159,16 @@ h1{
     position: relative;
     /* margin-top: 60%; */
 }
+
+/* start setting page */
+
 .loadingImage{
     height: 30vh;
     margin: 0 auto;
     position: relative;
-   
+    position: absolute;
+    background: linear-gradient(black, rgb(122, 26, 195)) no-repeat center;
 }
-/* start setting page */
 .settingsContent{
 display: flex;
 flex-direction: column;    
@@ -289,7 +292,14 @@ flex-direction: column;
 
 .fas {
     width: 10%;
+    color: black;
 }
+.fas fa trophy {
+    width: 10%;
+    color: orange;
+}
+/* beginning of desktop size styling */
+
 @media only screen and (min-width: 600px) {
     body {
         background-color: orange;
