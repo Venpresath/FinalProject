@@ -157,11 +157,7 @@ h1{
     height: 30vh;
     margin: 0 auto;
     position: absolute;
-<<<<<<< HEAD
-    background: linear-gradient(black, rgb(122, 26, 195)) no-repeat center;
-=======
    
->>>>>>> 6fa5b4e80f86fc0acd640b3532216b552899806d
 }
 /* start setting page */
 .settingsContent{
