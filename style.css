@@ -5,11 +5,7 @@
     text-align: center;
     font-size: 3.2rem;
     text-shadow: 3px 4px 10px black;
-<<<<<<< HEAD
-    margin-top: 22%;
-=======
     margin-top: 30%;
->>>>>>> 46ab04df4aef1fbe4e2519aa79a91f1e97f0f6d8
  }
 
  .home{
@@ -49,12 +45,8 @@
  }
 
  span{
-<<<<<<< HEAD
-    font-size: 1.5rem;
-=======
     font-size: 20px; 
     font-family: 'Righteous', cursive;
->>>>>>> 46ab04df4aef1fbe4e2519aa79a91f1e97f0f6d8
     
  }
 
@@ -232,15 +224,11 @@
 .difficultyButton{
     display: flex;  
     justify-content: center;  
-<<<<<<< HEAD
-    flex-wrap: nowrap;
-=======
     align-items: center;
     text-align: center;    
     /*flex-wrap: nowrap;*/
     transition: all linear 0.5s;
     height: 60px;
->>>>>>> 46ab04df4aef1fbe4e2519aa79a91f1e97f0f6d8
     width: 70%;
     background-color: white;
     border-radius: 5px;
@@ -321,9 +309,6 @@
 /* end settings page */
 
 .modal {
-<<<<<<< HEAD
-    display: flex;
-=======
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -350,7 +335,6 @@
 /* loss modal image */
 .resultImage {
     display: block;
->>>>>>> 46ab04df4aef1fbe4e2519aa79a91f1e97f0f6d8
     align-items: center;
     justify-content: center;
     background: url("https://media.giphy.com/media/3o7bu9zwfieCd1R9HG/giphy.gif");
@@ -458,8 +442,6 @@
     
 }
 
-<<<<<<< HEAD
-=======
 @media only screen and (min-width: 900px) {
     body {
         background-color: darkslateblue;
@@ -471,4 +453,3 @@
         font-size: 4vw;
     }
 }
->>>>>>> 46ab04df4aef1fbe4e2519aa79a91f1e97f0f6d8
