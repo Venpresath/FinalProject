@@ -167,11 +167,7 @@ h1{
     margin: 0 auto;
     position: relative;
     position: absolute;
-<<<<<<< HEAD
-   
-=======
     background: linear-gradient(black, rgb(122, 26, 195)) no-repeat center;
->>>>>>> f8a1e1a8a2a73fa1696a2109ac3a2205dc143b4f
 }
 .settingsContent{
 display: flex;
@@ -214,6 +210,8 @@ flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: url("https://media.giphy.com/media/3o7bu9zwfieCd1R9HG/giphy.gif");
+    
     
 }
 
