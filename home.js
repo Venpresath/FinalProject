@@ -7,7 +7,7 @@
         <p>Think you know music? <br> Enter an artist to find out!</p>
         <input type="text" placeholder="Enter an artist" ng-model="$ctrl.artist" class="inputHome"/><a href= "#!/settings"><button class="mybtnHome" ng-click="$ctrl.updateArtist($ctrl.artist)">PLAY</button></a>
         </div>
-        <div class="footer">¬_¬</div>`,
+        <div class="footer"><em><i class="fas fa-code"></i> with <i class="fas fa-heart"></i> from Claire, Kelly, DJ, and Roger!</em></div>`,
         // empty strings are created here that are filled in when a specific artist chosen by user.  
         controller: function (service) {
             let vm = this;
