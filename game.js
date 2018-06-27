@@ -19,7 +19,7 @@
                     <p>{{$ctrl.result}}</p>
                 </div>
             <div class="background" ng-show="$ctrl.background">
-            <div class="modal" ng-show="$ctrl.show"><h2 class="conditionText">{{$ctrl.modalText}}<br>{{$ctrl.modalTextTwo}}</h2><img class="modalImg" src="{{$ctrl.resultImg}}"><a href="#!/home"><button class="playAgain">Play again?</button></a></div></div>
+            <div class="modal" ng-show="$ctrl.show"><h1 class="conditionText">{{$ctrl.modalText}}</h2><br><h2 class="conditionText">{{$ctrl.modalTextTwo}}</h2><br><h2 class="conditionText">{{vm.songText}}</h2><img class="modalImg" src="{{$ctrl.resultImg}}"><a href="#!/home"><button class="playAgain">Play again?</button></a></div></div>
 
         </div>
         <div class="footer"><em><i class="fas fa-code"></i> with <i class="fas fa-heart"></i> from Claire, Kelly, DJ, and Roger!</em></div>
@@ -92,7 +92,8 @@
                         vm.losses = 0;
                         $(".mybtn").prop('disabled', true);
                         vm.modalText = `GAME OVER!`;
-                        vm.modalTextTwo = `The correct answer was: ${vm.songName}`
+                        vm.modalTextTwo = `The correct answer was: ${vm.songName}`;
+                        vm.songText = vm.songName;
                         vm.resultImg = "https://media0.giphy.com/media/1QJ3bY1RkiqWY/giphy.gif";
                         vm.show = !vm.show;
                         vm.background = !vm.background;
