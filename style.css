@@ -498,4 +498,30 @@
     h2.conditionText{
         font-size: 4vw;
     }
+    .settingsContent{
+        display: flex;
+        flex: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-flow: row wrap;
+        height: 80vh;
+        width: 80%;
+    }
+    .difficultyButton{
+        width: 35vw;
+        height: 35vh;
+        margin-right: 30px;
+    }
+    #difficultyButtonInsane{
+        width: 35vw;
+        height: 35vh;
+        margin-left: 2%;
+    }
+    .settingsContainer{
+        display: flex;
+        justify-content: center;
+    }
+    h1{
+        margin-bottom: 0px;
+    }
 }
