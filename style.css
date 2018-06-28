@@ -323,6 +323,8 @@
 
 /* Start Modal */
 .modal {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -336,15 +338,21 @@
     background: url("https://media.giphy.com/media/3o7bu9zwfieCd1R9HG/giphy.gif") no-repeat center;
 }
 .modalImg{
-    position: absolute;
+    display: flex;
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
     height: 50%;
+    width: 50%;
+    margin-top: -15%;
     border-radius: 10%;
 }
 .conditionText{
     margin: 3%;
-    font-size: 1.7vw;
+    font-size: 1.5rem;
+}
+h2.conditionText{
+    font-size: 2.5vw;
 }
 /* loss modal image */
 .resultImage {
@@ -492,7 +500,8 @@
         margin-top: 25%;    
     }    
     h2.conditionText{
-        font-size: 4vw;
+        font-size: 4;
+
     }
     .inputGame{
         margin-bottom: 5%;
@@ -508,8 +517,13 @@
     .appName{
         margin-top: 8%;    
     }    
+    h1.conditionText{
+        margin-bottom: 0;
+    }
     h2.conditionText{
-        font-size: 4vw;
+        font-size: 1.5vw;
+        width: auto;
+        margin-top: 0;
     }
     .settingsContent{
         display: flex;
@@ -550,5 +564,16 @@
         }
     .inputGame{
         margin: 0;
+    }
+    .modalImg{
+        padding-top: 0px;
+        position: absolute;
+        margin-top:0;
+        width:25%;
+        top: 30%;
+        border-radius: 15%;
+    }
+    .playAgain{
+        margin: 0%;
     }
 }

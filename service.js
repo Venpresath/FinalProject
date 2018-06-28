@@ -60,6 +60,10 @@
         getLyrics(trackNum);
         array.splice(j,1);
         console.log(array);
+        if(trackNum===87818215){
+            trackNum = 89179138;
+            return trackNum;
+        }
         return trackNum;
     })
 }
