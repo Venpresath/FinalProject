@@ -15,7 +15,7 @@
                 
                     <p class="lyrics">"{{$ctrl.lyrics}}"</p>
                     <p>- {{$ctrl.artist}} </p>
-                    <input class = "inputGame" type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button class="mybtnGame" ng-click="$ctrl.getSongName($ctrl.songNum); $ctrl.getTrackId()">Smash</button>
+                    <div class="gameResponsive"><input class = "inputGame" type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button class="mybtnGame" ng-click="$ctrl.getSongName($ctrl.songNum); $ctrl.getTrackId()">Smash</button></div>
                     <p class="resultGame">{{$ctrl.result}}</p>
                 </div>
             <div class="background" ng-show="$ctrl.background">

@@ -192,6 +192,8 @@
     z-index: 0;
     position: relative;
 }
+
+
 /* start loading image */
 .preloader {
     display: flex;
@@ -385,12 +387,10 @@
 
 .mybtnGame {
     position: relative;
-     
     border: none;
     color:white;
     border-radius: 10px;
     background: linear-gradient(black, rgba(122, 26, 195,0.6)) no-repeat center;
-    /* background-color: rgba(255, 255, 255, 0.2); */
     box-shadow: 3px 3px 10px black;
     margin: auto; 
     display: block;
@@ -537,5 +537,18 @@
     }
     h1{
         margin-bottom: 0px;
+    }
+    .gameResponsive{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0;
+        justify-content: center;
+    }
+    .mybtnGame{
+        margin: 10px;
+        }
+    .inputGame{
+        margin: 0;
     }
 }
