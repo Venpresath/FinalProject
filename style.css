@@ -297,6 +297,8 @@
 
 /* Start Modal */
 .modal {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -310,15 +312,21 @@
     background: url("https://media.giphy.com/media/3o7bu9zwfieCd1R9HG/giphy.gif") no-repeat center;
 }
 .modalImg{
-    position: absolute;
+    display: flex;
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
     height: 50%;
+    width: 50%;
+    margin-top: -15%;
     border-radius: 10%;
 }
 .conditionText{
     margin: 3%;
-    font-size: 1.7vw;
+    font-size: 1.5rem;
+}
+h2.conditionText{
+    font-size: 2.5vw;
 }
 /* loss modal image */
 .resultImage {
@@ -352,12 +360,18 @@
 /* Game Page */
 
 .resultGame {
-    display: flex;
-    left: 50%;
-    padding-left: 20%;
-    padding-right: 20%;
+    /* display: flex; */
+    /* left: 50%; */
+    margin: 0 auto;
+    padding-top: 10%;
+    /* padding-left: 20%;
+    padding-right: 20%; */
     /* transform: translateX(-50%); */
 }
+
+
+
+
 
 .mybtnGame {
     position: relative;
@@ -446,14 +460,14 @@
  }
 
 .fa-times {
-    width: 20%;
-    height: 20%;
+    width: 10%;
+    font-size: 2rem;
     color: red;
 }
 
 .fa-trophy {
-    width: 20%;
-    height: 20%;
+    width: 10%;
+    font-size: 2rem;
     color: goldenrod;
 }
 /* beginning of desktop size styling */
@@ -466,7 +480,8 @@
         margin-top: 25%;    
     }    
     h2.conditionText{
-        font-size: 4vw;
+        font-size: 4;
+
     }
     .inputGame{
         margin-bottom: 5%;
@@ -482,8 +497,15 @@
     .appName{
         margin-top: 8%;    
     }    
+    h1.conditionText{
+        margin-bottom: 0;
+    }
     h2.conditionText{
-        font-size: 4vw;
+        font-size: 1.5vw;
+        max-width: 70%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 0%;
     }
     .settingsContent{
         display: flex;
@@ -525,4 +547,29 @@
     .inputGame{
         margin: 0;
     }
+    .fa-times {
+        font-size: 70px;
+        color: red;
+    }
+    
+    .fa-trophy {
+        font-size: 70px;
+        color: goldenrod;
+    }
+    .modalImg{
+        padding-top: 0px;
+        position: absolute;
+        margin-top:0;
+        width:25%;
+        top: 30%;
+        border-radius: 15%;
+    }
+    .playAgain{
+        margin: 0%;
+    }
+    .modal {
+        align-content: center;
+        justify-items: center;
+    }
+    
 }
