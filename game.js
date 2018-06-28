@@ -111,7 +111,8 @@
                 service.getLyrics(vm.songNum).then(function (response) {
 
                     if (response === "" && vm.copyright > 0) {
-                        alert("Error: copyright issue");
+                        vm.lyrics = "Unfortunately this artist has a copyright that prevents us from displaying lyrics."
+                        return vm.lyrics;
                     } else if (response === ""){
                         vm.getTrackId(service.beArtist());
                         vm.wins++;
