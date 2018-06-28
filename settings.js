@@ -22,10 +22,10 @@
 
         controller: function(service){
             let vm = this;
-            vm.text = " You need 3 correct answers to win";
-            vm.text2 = " You need 5 correct answers to win";
-            vm.text3= " You need 7 correct answers to win";
-            vm.text4= " You need 10 straight correct answers";
+            vm.text = " You need 3 correct to win";
+            vm.text2 = " You need 5 correct to win";
+            vm.text3= " You need 7 correct to win";
+            vm.text4= " Enter If You Dare";
 
 
             vm.difficulty = function(a, b){
