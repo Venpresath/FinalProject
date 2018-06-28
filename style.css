@@ -80,7 +80,6 @@
 
  .mybtnHome{
      position: relative;
-
      border: none;
      color:white;
      border-radius: 10px;
@@ -97,19 +96,6 @@
      font-family: 'Righteous', cursive;
 }
 
-.fa-play {
-    display: none;
-}
-
-.mybtnHome:hover{
-    color: white;
-    display:inline;
-}
-
-.mybtnHome:after, .fa-play:after{
-    color: white;
-    display: inline;
-}
 
 .inputHome{
     border: none;
@@ -197,6 +183,7 @@
 
 .loadingImage{
     -webkit-height: 30vh;
+    height: 30vh;
     margin: 0 auto;
     position: absolute;
 }
