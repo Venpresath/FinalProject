@@ -515,6 +515,18 @@ h2.conditionText{
     }
     
 }
+@media only screen and (min-width: 750px) {
+    body {
+        background-color: darkslateblue;
+    }
+    .modalImg{
+        padding-top: 0px;
+        position: absolute;
+        margin-top:0;
+        height:40%;
+        top: 23%;
+        border-radius: 15%;
+    }
 
 @media only screen and (min-width: 900px) {
     body {
@@ -586,12 +598,13 @@ h2.conditionText{
         padding-top: 0px;
         position: absolute;
         margin-top:0;
-        width:25%;
-        top: 30%;
+        height:50%;
+        top: 23%;
         border-radius: 15%;
     }
     .playAgain{
         margin: 0%;
+        padding: 1%;
     }
     .modal {
         align-content: center;
