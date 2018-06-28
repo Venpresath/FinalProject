@@ -16,7 +16,7 @@
             vm.text = " 3 Wins 3 Lives";
             vm.text2 = " 5 Wins 3 Lives";
             vm.text3= " 7 Wins 3 Lives";
-            vm.text4= " 10 Wins 0 Lives";
+            vm.text4= " Enter If You Dare";
 
 
             vm.difficulty = function(a, b){
