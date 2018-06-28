@@ -487,11 +487,13 @@ h2.conditionText{
 
 .fa-times {
     width: 10%;
+    font-size: 2rem;
     color: red;
 }
 
 .fa-trophy {
     width: 10%;
+    font-size: 2rem;
     color: goldenrod;
 }
 /* beginning of desktop size styling */
