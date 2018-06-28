@@ -522,8 +522,10 @@ h2.conditionText{
     }
     h2.conditionText{
         font-size: 1.5vw;
-        width: auto;
-        margin-top: 0;
+        max-width: 70%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 0%;
     }
     .settingsContent{
         display: flex;
@@ -576,4 +578,9 @@ h2.conditionText{
     .playAgain{
         margin: 0%;
     }
+    .modal {
+        align-content: center;
+        justify-items: center;
+    }
+    
 }
