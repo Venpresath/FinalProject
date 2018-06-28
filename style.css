@@ -515,7 +515,8 @@
     #difficultyButtonInsane{
         width: 35vw;
         height: 35vh;
-        margin-left: 2%;
+        margin-right: 30px;
+        margin-left: 1%;
     }
     .settingsContainer{
         display: flex;

@@ -14,7 +14,7 @@
                 <a href="#!/game"> <button class="difficultyButton" ng-mouseenter="val3=true" ng-mouseleave="val3=false" ng-click="$ctrl.difficulty(7,3)">Hard <span ng-show="val3"> {{$ctrl.text3}}</span></button></a>
             </div>
             <div>   
-                <a href="#!/game"> <button class="difficultyButton" id="difficultyButtonInsane" ng-mouseenter="val4=true" ng-mouseleave="val4=false" ng-click="$ctrl.difficulty(10,1)">Insane <span ng-show="val4"> {{$ctrl.text4}}</span></button></a>
+                <a href="#!/game"> <button class="difficultyButtonInsane" id="difficultyButtonInsane" ng-mouseenter="val4=true" ng-mouseleave="val4=false" ng-click="$ctrl.difficulty(10,1)">Insane <span ng-show="val4"> {{$ctrl.text4}}</span></button></a>
             </div>        
         </div>
         <div class="footer"><em><i class="fas fa-code"></i> with <i class="fas fa-heart"></i> from Claire, Kelly, DJ, and Roger!</em></div></div>`,
