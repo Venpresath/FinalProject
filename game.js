@@ -19,7 +19,7 @@
                     <p class="resultGame">{{$ctrl.result}}</p>
                 </div>
             <div class="background" ng-show="$ctrl.background">
-            <div class="modal" ng-show="$ctrl.show"><h1 class="conditionText">{{$ctrl.modalText}}</h2><br><h2 class="conditionText">{{$ctrl.modalTextTwo}}</h2><br><h2 class="conditionText">{{vm.songText}}</h2><img class="modalImg" src="{{$ctrl.resultImg}}"><a href="#!/home"><button class="playAgain">Play again?</button></a></div></div>
+            <div class="modal" ng-show="$ctrl.show"><h1 class="conditionText">{{$ctrl.modalText}}</h2><h2 class="conditionText">{{$ctrl.modalTextTwo}}</h2><br><h2 class="conditionText">{{vm.songText}}</h2><img class="modalImg" src="{{$ctrl.resultImg}}"><a href="#!/home"><button class="playAgain">Play again?</button></a></div></div>
 
         </div>
         <div class="footer"><em><i class="fas fa-code"></i> with <i class="fas fa-heart"></i> from Claire, Kelly, DJ, and Roger!</em></div>
