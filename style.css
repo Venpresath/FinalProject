@@ -55,6 +55,7 @@
      flex-direction: column;
      align-items: center;
      align-self: center;
+     -webkit-overflow-x: hidden;
      overflow-x: hidden;
      position: relative;
      height:100%;
@@ -82,7 +83,6 @@
      color:white;
      border-radius: 10px;
      background: linear-gradient(black, rgba(122, 26, 195,0.6)) no-repeat center;
-     /* background-color: rgba(255, 255, 255, 0.2); */
      box-shadow: 3px 3px 10px black;
      margin: auto; 
      display: block;
@@ -100,7 +100,6 @@
 }
 
 .mybtnHome:hover{
-    /* background-color: purple;  */
     color: white;
     display:inline;
 }
@@ -109,28 +108,6 @@
     color: white;
     display: inline;
 }
-
-
-/* .button span:after {
-    content: '';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-   }
-   
-   .button:hover span {
-    padding-right: 25px;
-   }
-   
-   .button:hover span:after {
-    opacity: 1;
-    right: 0;
-   } */
-
-
-
 
 .inputHome{
     border: none;
@@ -228,9 +205,6 @@
     margin-top: 3%; 
       } 
     
-     
-
-
 .difficultyButton{
     display: flex; 
     flex-direction: column;
