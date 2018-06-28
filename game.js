@@ -40,6 +40,7 @@
             vm.modalText = "";
             vm.modalTextTwo = "";
             vm.resultImg = "";
+            vm.copyright = 0;
             vm.gameType = service.difficulty();
 
             // guessSong function will determine if the users answer is correct or not and give an appropriate response
@@ -108,10 +109,13 @@
             // getLyrics using the trackId to get lyrics. If lyric not found, call function again. 
             vm.getLyrics = function () {
                 service.getLyrics(vm.songNum).then(function (response) {
-                    if (response === "") {
-                        console.log("Lyrics not found");
+
+                    if (response === "" && vm.copyright > 0) {
+                        alert("Error: copyright issue");
+                    } else if (response === ""){
                         vm.getTrackId(service.beArtist());
                         vm.wins++;
+                        vm.copyright++;  
                     }
                     vm.lyrics = service.beLyrics();
                     return vm.lyrics;

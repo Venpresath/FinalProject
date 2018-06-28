@@ -49,7 +49,7 @@
             j = Math.floor(Math.random() * (i));
             let n = array[j];
             console.log(j);
-    let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.search?format=json&q_artist=${artist}&s_track_rating=desc&apikey=${APIKey}`
+    let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.search?format=json&q_artist=${artist}&s_track_rating=desc&f_has_lyrics&apikey=${APIKey}`
     
     return $http.get(url).then(function (response) {
 
