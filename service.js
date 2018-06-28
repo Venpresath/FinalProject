@@ -32,7 +32,7 @@
         }
         // Grabs a snippet of lyrics from our API by using the trackID. Also updates the lyrics variable. 
         let getLyrics = function (trackId) {
-            let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.snippet.get?format=json&track_id=${trackId}&apikey=${APIKey}`
+            let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.snippet.get?format=json&commontrack_id=${trackId}&apikey=${APIKey}`
             
             return $http.get(url).then(function (response) {
                 let lyrics = response.data.message.body.snippet.snippet_body;
@@ -55,8 +55,8 @@
 
         //create random number generator between 1 and 10 to find the index of the song. 
         //varying difficulties can change the number generated. 
-        console.log(response.data.message.body.track_list[n].track.track_id);
-        let trackNum = response.data.message.body.track_list[n].track.track_id;
+        console.log(response.data.message.body.track_list[n].track.commontrack_id);
+        let trackNum = response.data.message.body.track_list[n].track.commontrack_id;
         getLyrics(trackNum);
         array.splice(j,1);
         console.log(array);
@@ -68,7 +68,7 @@
 
 // getSongName takes the trackId to get the name of the specific song. 
 let getSongName = function (trackId) {
-    let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.get?format=json&track_id=${trackId}&apikey=${APIKey}`;
+    let url = `https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/track.get?format=json&commontrack_id=${trackId}&apikey=${APIKey}`;
     
     return $http.get(url).then(function (response) {
         console.log(url);

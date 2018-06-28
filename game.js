@@ -15,8 +15,8 @@
                 
                     <p class="lyrics">"{{$ctrl.lyrics}}"</p>
                     <p>- {{$ctrl.artist}} </p>
-                    <input class = "inputGame" type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button class="mybtnGame" ng-click="$ctrl.getSongName($ctrl.songNum); $ctrl.getTrackId()">Smash</button>
-                    <p>{{$ctrl.result}}</p>
+                    <input  class = "inputGame" type = "text" placeholder="Guess the song" ng-model="$ctrl.guess"><button class="mybtnGame" ng-click="$ctrl.getSongName($ctrl.songNum); $ctrl.getTrackId()">Smash</button>
+                    <p >{{$ctrl.result}}</p>
                 </div>
             <div class="background" ng-show="$ctrl.background">
             <div class="modal" ng-show="$ctrl.show"><h1 class="conditionText">{{$ctrl.modalText}}</h2><br><h2 class="conditionText">{{$ctrl.modalTextTwo}}</h2><br><h2 class="conditionText">{{vm.songText}}</h2><img class="modalImg" src="{{$ctrl.resultImg}}"><a href="#!/home"><button class="playAgain">Play again?</button></a></div></div>
@@ -111,7 +111,7 @@
                 service.getLyrics(vm.songNum).then(function (response) {
 
                     if (response === "" && vm.copyright > 0) {
-                        vm.lyrics = "Unfortunately this artist has a copyright that prevents us from displaying lyrics."
+                        vm.lyrics = "Unfortunately this artist has a copyright that prevents us from displaying lyrics. Please choose another artist."
                         return vm.lyrics;
                     } else if (response === ""){
                         vm.getTrackId(service.beArtist());
