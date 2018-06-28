@@ -47,6 +47,9 @@
                 if (guess.indexOf("?") > -1) {
                     guess = guess.substring(0, guess.indexOf("?"));
                     return guess;
+                } else if (guess.indexOf("!") > -1) {
+                    guess = guess.substring(0, guess.indexOf("!"));
+                    return guess;
                 }
                 if (guess.toLowerCase() == vm.songName.toLowerCase()) {
                     console.log("correct");

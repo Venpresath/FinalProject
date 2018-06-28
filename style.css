@@ -298,19 +298,21 @@
     transform: translateY(4px);
 }
 
+
 .ng-show {
-    height: 100%;
+    height: 150px;
+}
+
+.difficultyButton.ng-show {
+    animation: 0.5s myChange;
 }
 
 @keyframes myChange {
     from {
-        height: 100px;
+        height: 60px;
     } to {
         height: 150px;
     }
-}
-.difficultyButton.ng-show {
-    animation: 0.5s myChange;
 }
 /* end settings page */
 
