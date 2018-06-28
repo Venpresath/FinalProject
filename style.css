@@ -11,9 +11,11 @@
  .home{
      top: -40%;
      position: absolute;
+     -webkit-height: 80vh;
      height: 80vh;
      z-index: -1;
  }
+
 .homeP{
      font-family: 'Righteous', cursive;
 }
@@ -27,8 +29,8 @@
     height: 100%; 
     width: 100%;
  }
+
   body{
-    /* font-family: 'Montserrat', sans-serif; */
     border: none;
     text-decoration: none;
     font-family: 'Righteous', cursive;
@@ -194,7 +196,7 @@
 /* start setting page */
 
 .loadingImage{
-    height: 30vh;
+    -webkit-height: 30vh;
     margin: 0 auto;
     position: absolute;
 }
@@ -245,8 +247,6 @@
     margin-bottom: 3%;
     background: linear-gradient(black, rgba(122, 26, 195,0.6)) no-repeat center;
     box-shadow: 3px 3px 10px black;
-    /* box-shadow: 3px 4px 10px black; */
-    /* background-color: rgba(255, 255, 255, 0.3); */
     color: white;
 }
 
@@ -345,7 +345,6 @@ h2.conditionText{
     border-radius: 10px;
     align-content: center;
     background-color: rgba(255, 255, 255, 0.39);
-    /* height: 10%; */
     margin-bottom: 12px;
     margin-top: 3%;
     display: block;
@@ -569,7 +568,7 @@ h2.conditionText{
     }
     .modal {
         align-content: center;
-        justify-items: center;
+        justify-content: center;
     }
     
 }
