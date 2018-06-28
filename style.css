@@ -472,14 +472,12 @@
  }
 
 .fa-times {
-    width: 20%;
-    height: 20%;
+    width: 10%;
     color: red;
 }
 
 .fa-trophy {
-    width: 20%;
-    height: 20%;
+    width: 10%;
     color: goldenrod;
 }
 /* beginning of desktop size styling */
@@ -550,5 +548,14 @@
         }
     .inputGame{
         margin: 0;
+    }
+    .fa-times {
+        font-size: 70px;
+        color: red;
+    }
+    
+    .fa-trophy {
+        font-size: 70px;
+        color: goldenrod;
     }
 }
