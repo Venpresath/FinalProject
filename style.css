@@ -57,6 +57,7 @@
      align-self: center;
      overflow-x: hidden;
      position: relative;
+     height:100%;
  }
 
  button{
