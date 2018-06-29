@@ -296,6 +296,7 @@
     margin: 0 auto;
     width: 80%;
     z-index: 10;
+    padding: 0%;
     background: url(https://media.giphy.com/media/3o7bu9zwfieCd1R9HG/giphy.gif) no-repeat center;
 }
 .modalImg {
@@ -303,8 +304,8 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    width: 150px;
-    margin-bottom: 15%;
+    width: 50%;
+    /* margin-bottom: 15%; */
     border-radius: 10%;
     align-items: center;
 }
@@ -500,11 +501,11 @@ h2.conditionText{
         margin-bottom: 10px;
     }
     h2.conditionText{
-        font-size: 1.5vw;
-        max-width: 70%;
+        font-size: 1.3vw;
+        max-width: 60%;
         text-align: center;
         margin: 0 auto;
-        padding: 0%;
+        padding: 10px;
     }
     .settingsContent{
         display: flex;
@@ -558,12 +559,15 @@ h2.conditionText{
         border-radius: 15%;
     } */
     .playAgain{
-        margin: 0%;
+        /* margin: 0%; */
         padding: 1%;
     }
     .modal {
         bottom: 20%;
     }
-    
+    .modalImg{
+        width:200px;
+        margin-bottom: 8%;
+    }
 }
 }
