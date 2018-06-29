@@ -481,14 +481,13 @@ h2.conditionText{
     body {
         background-color: darkslateblue;
     }
-    /* .modalImg{
-        padding-top: 0px;
-        position: absolute;
-        margin-top:0;
-        height:40%;
-        top: 23%;
-        border-radius: 15%;
-    } */
+   /* model img wasn't here */
+    .modalImg{
+        padding: 20px;
+        width: 30%;
+        margin-bottom: 20px;
+        border-radius: 15%;  
+    }
 
 @media only screen and (min-width: 900px) {
     body {
