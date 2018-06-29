@@ -200,7 +200,6 @@
     justify-content: center;  
     align-items: center;
     text-align: center;    
-    /*flex-wrap: nowrap;*/
     transition: all linear 0.5s;
     height: 60px;
     width: 70%;
@@ -286,7 +285,6 @@
 .modal {
     display: flex;
     align-content: center;
-    justify-items: center;
     flex-direction: column;
     justify-content: center;
     position: absolute;
@@ -297,17 +295,16 @@
     top: 20%;
     margin: 0 auto;
     width: 80%;
-    height: 50%;
     z-index: 10;
-    background: url("https://media.giphy.com/media/3o7bu9zwfieCd1R9HG/giphy.gif") no-repeat center;
+    background: url(https://media.giphy.com/media/3o7bu9zwfieCd1R9HG/giphy.gif) no-repeat center;
 }
-.modalImg{
+.modalImg {
     display: flex;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    height: 50%;
-    margin-top: -15%;
+    width: 150px;
+    margin-bottom: 15%;
     border-radius: 10%;
     align-items: center;
 }
@@ -483,14 +480,14 @@ h2.conditionText{
     body {
         background-color: darkslateblue;
     }
-    .modalImg{
+    /* .modalImg{
         padding-top: 0px;
         position: absolute;
         margin-top:0;
         height:40%;
         top: 23%;
         border-radius: 15%;
-    }
+    } */
 
 @media only screen and (min-width: 900px) {
     body {
@@ -500,7 +497,7 @@ h2.conditionText{
         margin-top: 8%;    
     }    
     h1.conditionText{
-        margin-bottom: 0;
+        margin-bottom: 10px;
     }
     h2.conditionText{
         font-size: 1.5vw;
@@ -533,9 +530,6 @@ h2.conditionText{
         display: flex;
         justify-content: center;
     }
-    h1{
-        margin-bottom: 0px;
-    }
     .gameResponsive{
         display: flex;
         flex-direction: row;
@@ -558,21 +552,17 @@ h2.conditionText{
         font-size: 70px;
         color: goldenrod;
     }
-    .modalImg{
+    /* .modalImg{
         padding-top: 0px;
         position: absolute;
-        margin-top:0;
-        height:50%;
-        top: 23%;
         border-radius: 15%;
-    }
+    } */
     .playAgain{
         margin: 0%;
         padding: 1%;
     }
     .modal {
-        align-content: center;
-        justify-content: center;
+        bottom: 20%;
     }
     
 }
