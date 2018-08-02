@@ -157,7 +157,7 @@
             });
 
 
-
+            //clicks the button when 'enter' is pressed
             $('input').keypress(function (e) {
                 if (e.which == 13) {
                     $('.mybtnGame').click();
